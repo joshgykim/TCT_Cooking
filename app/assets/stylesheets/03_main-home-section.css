@@ -1,0 +1,15 @@
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 2000px;
+}
+
+.main-section h1 {
+  padding: 25px;
+  font-size: 40px;
+}
+
+.main-section h3 {
+  font-size: 14px;
+}

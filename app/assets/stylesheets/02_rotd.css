@@ -1,0 +1,57 @@
+.rotd {
+  width: 100vw;
+  height: 700px;
+  background: #e33d26;
+  position: relative;
+}
+
+.rotd-image {
+  width: 100vw;
+  height: 700px;
+  object-fit: cover;
+  object-position:bottom;
+}
+
+.rotd-label {
+  background: white;
+  position: absolute;
+  top: 330px;
+  left: 80px;
+  width: 330px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotd-label-circle {
+  background: #e33d26;
+  color: white;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  border-radius:60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: -60px;
+  left: -60px;
+}
+
+.rotd-label-circle h3 {
+  width: 100px;
+  text-align: center;
+  transform:translateY(10px)
+}
+
+.rotd-label h1 {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.rotd-label h3 {
+  margin: 10px 30px;
+  font-size: 15px;
+}

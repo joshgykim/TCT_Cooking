@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-class Login extends React.Component {
+class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: '',
       email: '',
       password: ''
     };
@@ -18,7 +19,7 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.loginUser(this.state)
+    this.props.createNewUser(this.state) 
       .then(() => this.props.history.push('/')) // Hash history cannot push
   }
 
@@ -43,8 +44,16 @@ class Login extends React.Component {
             <h2>Unlock California Times recipes and your personal recipe box with a free account.</h2>
           </div>
           <div className="session-form-right">
-            <form onSubmit={ (e) => this.handleSubmit(e) }>
-              <label>Email: 
+            <form  onSubmit={ (e) => this.handleSubmit(e) }>
+              <label>Username:
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={ (e) => this.updateInput(e, "username") }
+                />
+              </label>
+
+              <label>Email:
                 <input
                   type="text"
                   value={this.state.email}
@@ -52,7 +61,7 @@ class Login extends React.Component {
                 />
               </label>
 
-              <label>Password: 
+              <label>Password:
                 <input
                   type="password"
                   value={this.state.password}
@@ -60,11 +69,11 @@ class Login extends React.Component {
                 />
               </label>
 
-              <button>Login</button>
+              <button>Create Account</button>
             </form>
             {sessionErrors}
             <h2>----- or -----</h2>
-            <Link to="/signup">Create an account?</Link>
+            <Link to="/login">Log in as existing user</Link>
           </div>
         </div>
       </div>
@@ -72,4 +81,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Signup;

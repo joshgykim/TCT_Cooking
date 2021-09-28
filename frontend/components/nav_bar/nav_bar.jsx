@@ -15,16 +15,16 @@ class NavBar extends React.Component {
         <button onClick={this.props.logoutUser}>(log out)</button>
       </div>
     ) : (
-      <div>
+      <div className="nav-bar-right">
         <Link className="button" to="/">Your Grocery List</Link>
-        <Link className="button" to="/login">Your Recipe Box Log In</Link>
+        <Link id="recipe-box-button" className="button" to="/login">Your Recipe Box (Login)</Link>
       </div>
     )
 
     return (
       <header className="nav-bar">
         <div className="nav-bar-left">
-          <h1 className="Logo">(logo)</h1>
+          <h1 className="logo">The California Times Cooking</h1>
         </div>
         {display}
       </header>
