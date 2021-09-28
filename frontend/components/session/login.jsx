@@ -1,6 +1,6 @@
 import React from "react";
 
-class Signup extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,29 +9,30 @@ class Signup extends React.Component {
       password: ''
     };
     this.updateInput = this.updateInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  updateInput(type) {
-    return (e) => this.setState({ [type]: e.currentTarget.value});
+  updateInput(e, type) {
+    this.setState({ [type]: e.target.value});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state)
-      // .then( () => this.props.history.push(''))
+    this.props.createNewUser(this.state) 
+      .then(() => this.props.history.push('/')) // Hash history cannot push
   }
 
   render() {
     return(
       <div className="session-form">
-        <h2>Sign Up!</h2>
-        
-        <form onClick={this.handleSubmit}>
+        <h2>Log in</h2>
+
+        <form  onSubmit={ (e) => this.handleSubmit(e) }>
           <label>Username:
             <input
               type="text"
               value={this.state.username}
-              onChange={this.updateInput("username")}
+              onChange={ (e) => this.updateInput(e, "username") }
             />
           </label>
 
@@ -39,7 +40,7 @@ class Signup extends React.Component {
             <input
               type="text"
               value={this.state.email}
-              onChange={this.updateInput("email")}
+              onChange={ (e) => this.updateInput(e, "email") }
             />
           </label>
 
@@ -47,15 +48,15 @@ class Signup extends React.Component {
             <input
               type="password"
               value={this.state.password}
-              onChange={this.updateInput("password")}
+              onChange={ (e) => this.updateInput(e, "password") }
             />
           </label>
 
-          <button>Sign up</button>
+          <button>Login</button>
         </form>
       </div>
     )
   }
 }
 
-export default Signup;
+export default Login;
