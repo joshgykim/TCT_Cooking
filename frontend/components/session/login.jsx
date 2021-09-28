@@ -10,6 +10,7 @@ class Login extends React.Component {
     };
     this.updateInput = this.updateInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemoUser = this.loginDemoUser.bind(this);
   }
 
   updateInput(e, type) {
@@ -24,6 +25,17 @@ class Login extends React.Component {
 
   componentWillUnmount() {
     this.props.deleteSessionErrors();
+  }
+
+  loginDemoUser(e) {
+    e.preventDefault();
+    let demoUser = {
+      email: 'demo_user@email.com',
+      password: 'password'
+    }
+    this.setState(demoUser);
+    this.props.loginUser(demoUser)
+      .then(() => this.props.history.push('/'))
   }
 
   render() {
@@ -61,6 +73,7 @@ class Login extends React.Component {
               </label>
 
               <button>Login</button>
+              <button onClick={ (e) => this.loginDemoUser(e) }>Demo Login</button>
             </form>
             {sessionErrors}
             <h2>----- or -----</h2>

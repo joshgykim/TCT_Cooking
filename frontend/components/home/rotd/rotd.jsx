@@ -1,9 +1,20 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+
 
 class ROTD extends React.Component {
+  constructor(props) {
+    super(props);
+    this.showRecipe = this.showRecipe.bind(this);
+  }
+
+  showRecipe() {
+    console.log("clicked");
+  }
+
   render() {
     return (
-      <div className="rotd">
+      <div className="rotd" onClick={this.showRecipe}>
         <img className="rotd-image" src={this.props.recipe.image_url}/>
         <div className="rotd-label">
           <h1>{this.props.recipe.title}</h1>
