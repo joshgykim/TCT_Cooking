@@ -7,9 +7,9 @@ class NotFound extends React.Component {
 
   render() {
     return (
-      <diuv>
+      <div>
         ERROR 404
-      </diuv>
+      </div>
     )
   }
 }

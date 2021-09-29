@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = this.props.formType === "login" ? {
+      email: '',
+      password: ''
+    } : {
+      username: '',
       email: '',
       password: ''
     };
+
     this.updateInput = this.updateInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginDemoUser = this.loginDemoUser.bind(this);
@@ -19,12 +23,8 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.loginUser(this.state)
-      .then(() => this.props.history.push('/')) // Hash history cannot push
-  }
-
-  componentWillUnmount() {
-    this.props.deleteSessionErrors();
+    this.props.processForm(this.state)
+      .then( () => this.props.closeModal());
   }
 
   loginDemoUser(e) {
@@ -34,8 +34,8 @@ class Login extends React.Component {
       password: 'password'
     }
     this.setState(demoUser);
-    this.props.loginUser(demoUser)
-      .then(() => this.props.history.push('/'))
+    this.props.processForm(demoUser)
+      .then( () => this.props.closeModal());
   }
 
   render() {
@@ -47,15 +47,30 @@ class Login extends React.Component {
       </ul>
     ) : null;
 
+    const usernameInput = this.props.formType === "signup" ? (
+      <label>Username:
+        <input
+          type="text"
+          value={this.state.username}
+          onChange={ (e) => this.updateInput(e, "username") }
+        />
+      </label>
+    ) : null;
+
+    const demoButton = this.props.formType === "login" ? (
+      <button onClick={ (e) => this.loginDemoUser(e) }>Demo Login</button>
+    ) : null;
+
     return (
-      <div className="session-form">
-        <div className="session-form-popup">
-          <Link className="exit-button" to="/">X</Link>
+      <div className="session-form-popup" onClick={e => e.stopPropagation()}>
           <div className="session-form-left">
             <h2>Unlock California Times recipes and your personal recipe box with a free account.</h2>
           </div>
           <div className="session-form-right">
             <form onSubmit={ (e) => this.handleSubmit(e) }>
+
+              {usernameInput}
+
               <label>Email: 
                 <input
                   type="text"
@@ -72,14 +87,18 @@ class Login extends React.Component {
                 />
               </label>
 
-              <button>Login</button>
-              <button onClick={ (e) => this.loginDemoUser(e) }>Demo Login</button>
+              <button>{this.props.formType}</button>
+
+              {demoButton}
+
             </form>
+
             {sessionErrors}
+
             <h2>----- or -----</h2>
-            <Link to="/signup">Create an account?</Link>
+
+            {this.props.otherForm}
           </div>
-        </div>
       </div>
     )
   }
