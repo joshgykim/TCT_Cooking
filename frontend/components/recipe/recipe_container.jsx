@@ -3,7 +3,10 @@ import Recipe from "./recipe";
 import { getRecipeData } from "../../actions/recipe_actions";
 
 const mapStateToProps = (state, ownProps) => ({
-  recipe: state.entities.recipes[ownProps.match.params.recipeId] ? state.entities.recipes[ownProps.match.params.recipeId] : {}
+  recipe: state.entities.recipes[ownProps.match.params.recipeId] ? (
+    state.entities.recipes[ownProps.match.params.recipeId]) : (null),
+  categories: state.entities.categories,
+  ingredients: state.entities.ingredients
 })
 
 const mapDispatchToProps = (dispatch) => ({

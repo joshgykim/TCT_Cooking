@@ -10,21 +10,24 @@ class Recipe extends React.Component {
     this.props.getRecipeData(this.props.match.params.recipeId);
   }
 
-  render() {
-    // const categoryLinks = Object.keys(this.props.categories).map( (categoryId, i) => {
-    //   return (
-    //     <div key={i}>
-    //       <Link to={`/categories/${categoryId}`}>
-    //         {this.props.categories[categoryId].name}
-    //       </Link>
-    //       <h3>
-    //         { (i === Object.keys(this.props.categories).length - 1 ? "" : ", ")}
-    //       </h3>
-    //     </div>
-    //   )
-    // })
+  componentWillUpdate() {
+    this.props.getRecipeData(this.props.match.params.recipeId);
+  }
 
-    const preparationList = this.props.recipe.preparations ? (
+  render() {
+    if (this.props.recipe === null) return (<div className="recipe"></div>)
+
+    const categoryLinks = Object.keys(this.props.categories).map( (categoryId, i) => (
+        <div key={i}>
+          <Link to={`/categories/${categoryId}`}>
+            {this.props.categories[categoryId].name}
+            { (i === Object.keys(this.props.categories).length - 1 ? "" : ", ")}
+          </Link>
+        </div>
+      )
+    )
+
+    const preparationList = (
       <ol>
         {this.props.recipe.preparations.split("-$%-").map( (step, i) => (
           <div key={i}>
@@ -36,15 +39,32 @@ class Recipe extends React.Component {
           </div>
         ))}
       </ol>
-    ) : null;
+    )
 
-    console.log(preparationList)
+    const ingredientList = (
+      <ul className="recipe-ingredients">
+        { Object.keys(this.props.ingredients).map( (ingredientId, i) => (
+            <li key={i}>
+              <h3 className="ingredient-quantity">
+                {this.props.ingredients[ingredientId].quantity}
+              </h3>
+              <h3 className="ingredient-details">
+                {this.props.ingredients[ingredientId].unit + " "}
+                {this.props.ingredients[ingredientId].name}
+              </h3>
+            </li>
+          ))
+        }
+      </ul>
+    )
 
     return (
       <div className="recipe">
         <div className="recipe-heading">
           <h1>{this.props.recipe.title}</h1>
-          {/* <h3>{this.props.recipe.author}</h3> */}
+          <Link to={`/authors/${this.props.recipe.author.id}`}>
+            {this.props.recipe.author.name}
+          </Link>
         </div>
 
         <div className="recipe-intro">
@@ -58,14 +78,14 @@ class Recipe extends React.Component {
           </div>
         </div>
 
-        {/* <div className="recipe-categories">
+        <div className="recipe-categories">
           {categoryLinks}
-        </div> */}
+        </div>
 
         {/* PLACEHOLDER FOR RATINGS */}
 
         <div className="recipe-instructions">
-          {/* PLACEHOLDER FOR PREPARATIONS */}
+          {ingredientList}
           {preparationList}
         </div>
       </div>

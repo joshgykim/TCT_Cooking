@@ -26,6 +26,10 @@ dChang = Author.create({
   bio: "David Chang is an American restaurateur, author, podcaster and television personality. He is the founder of the Momofuku restaurant group, which includes Momofuku Noodle Bar, Momofuku Ssäm Bar, Milk Bar, and Momofuku Ko, and more."
 })
 
+mClark = Author.create({
+  name: "Melissa Clark",
+  bio: "Melissa Clark has been a columnist for the Food section since 2007. She reports on trends, creates recipes and appears in videos linked to her column, A Good Appetite. She’s also written dozens of cookbooks. A native of Brooklyn, she knows where to find the best bagel."
+})
 
 ######################### RECIPE #########################
 
@@ -37,6 +41,16 @@ bossam = Recipe.create({
   time: "7 hours, plus 6 hours seasoning",
   yield: "6 to 10 servings",
   author_id: 1
+})
+
+honeyCakeWithPlums = Recipe.create({
+  title: "Red Wine Honey Cake With Plums",
+  description: "Honey cakes are an inevitable part of the Rosh Hashana meal, but this one, with its deep, spicy flavor and gorgeous hue, will be welcome any time of year.",
+  image_url: "https://static01.nyt.com/images/2014/04/15/dining/honeycake/honeycake-mediumThreeByTwo440.jpg",
+  preparations: "Place a rack in the middle of the oven; heat to 350 degrees. Generously grease and flour a 10-inch Bundt pan, including center tube.-$%-In a large bowl, whisk together flour, baking powder, baking soda, salt and spices.-$%-In another large bowl, whisk eggs well. Whisk in sugar, oil, 1 cup honey, the wine and the fresh ginger until well combined. Whisk in dry ingredients until smooth.-$%-Pour batter into pan and bake until springy to the touch and a cake tester comes out clean, 45 to 50 minutes. Transfer pan to a wire rack to cool for about 20 minutes, then unmold the cake and let cool completely.-$%-Meanwhile, pit and quarter plums. In a medium bowl, toss plums with remaining 2 tablespoons honey and the thyme. Add more honey to taste and let macerate for at least 30 minutes. Serve cake sliced and garnished with plums and thyme branches.",
+  time: "1 1/2 hours, plus cooling",
+  yield: "10 to 12 servings",
+  author_id: 2
 })
 
 ######################### INGREDIENTS #########################
@@ -58,12 +72,31 @@ Ingredient.create({name: "bibb lettuce, leaves separated", quantity: "3", unit: 
 Ingredient.create({name: "fresh oysters (optional)", quantity: "1 or more", unit: "dozen", recipe_id: 1})
 Ingredient.create({name: "kimchi (available in many Asian markets, and online)", quantity: "", unit: "", recipe_id: 1})
 
+Ingredient.create({name: "Grease or nonstick spray, for the pan", quantity: "", unit: "", recipe_id: 2})
+Ingredient.create({name: "all-purpose flour, more for the pan", quantity: "300", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "baking powder (2 teaspoons)", quantity: "10", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "baking soda (1/2 teaspoon)", quantity: "3", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "salt (1/2 teaspoon)", quantity: "3", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "cinnamon (1 1/2 teaspoons", quantity: "2", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "cardamom (1 teaspoon)", quantity: "2", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "ground ginger (1 teaspoon)", quantity: "2", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "granulated sugar (1 cup)", quantity: "200", unit: "grams", recipe_id: 2})
+Ingredient.create({name: "olive oil", quantity: "1 1/4", unit: "cups", recipe_id: 2})
+Ingredient.create({name: "good quality honey, more to taste", quantity: "1", unit: "cup", recipe_id: 2})
+Ingredient.create({name: "dry red wine", quantity: "3/4", unit: "cup", recipe_id: 2})
+Ingredient.create({name: "grated fresh ginger", quantity: "2", unit: "teaspoons", recipe_id: 2})
+Ingredient.create({name: "large eggs", quantity: "3", unit: "", recipe_id: 2})
+Ingredient.create({name: "ripe yellow plums", quantity: "1 1/2", unit: "pounds", recipe_id: 2})
+Ingredient.create({name: "chopped lemon thyme leaves, or regular thyme leaves, plus branches for garnish", quantity: "1", unit: "tablespoon", recipe_id: 2})
+
+
 ######################### CATEGORIES #########################
 
 Category.create({name: "Dinner"})
 Category.create({name: "Asian"})
 Category.create({name: "Pork"})
 Category.create({name: "Main Course"})
+Category.create({name: "Dessert"})
 
 ######################### CATEGORIZARTIONS #########################
 
@@ -71,3 +104,4 @@ Categorization.create({category_id: 1, recipe_id: 1})
 Categorization.create({category_id: 2, recipe_id: 1})
 Categorization.create({category_id: 3, recipe_id: 1})
 Categorization.create({category_id: 4, recipe_id: 1})
+Categorization.create({category_id: 5, recipe_id: 2})
