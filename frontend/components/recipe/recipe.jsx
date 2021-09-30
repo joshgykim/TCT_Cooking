@@ -7,39 +7,44 @@ class Recipe extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRecipe(this.props.recipe.id);
+    this.props.getRecipeData(this.props.match.params.recipeId);
   }
 
   render() {
-    const categoryLinks = Object.keys(this.props.categories).map( (categoryId, i) => {
-      return (
-        <div key={i}>
-          <Link to={`/categories/${categoryId}`}>
-            {this.props.categories[categoryId].name}
-          </Link>
-          <h3>
-            { (i === Object.keys(this.props.categories).length - 1 ? "" : ", ")}
-          </h3>
-        </div>
-      )
-    })
+    // const categoryLinks = Object.keys(this.props.categories).map( (categoryId, i) => {
+    //   return (
+    //     <div key={i}>
+    //       <Link to={`/categories/${categoryId}`}>
+    //         {this.props.categories[categoryId].name}
+    //       </Link>
+    //       <h3>
+    //         { (i === Object.keys(this.props.categories).length - 1 ? "" : ", ")}
+    //       </h3>
+    //     </div>
+    //   )
+    // })
 
-    const preparationList = (
+    const preparationList = this.props.recipe.preparations ? (
       <ol>
-        {this.props.preparations.split("-$%-").map( (step, i) => {
-          <li key={i}>
-            {step}
-          </li>
-          })
-        }
+        {this.props.recipe.preparations.split("-$%-").map( (step, i) => (
+          <div key={i}>
+            <h2>Step {i+1}:</h2>
+            <li>
+              {step}
+            </li>
+            <br></br>
+          </div>
+        ))}
       </ol>
-    )
+    ) : null;
+
+    console.log(preparationList)
 
     return (
       <div className="recipe">
         <div className="recipe-heading">
           <h1>{this.props.recipe.title}</h1>
-          <h3>{this.props.recipe.author}</h3>
+          {/* <h3>{this.props.recipe.author}</h3> */}
         </div>
 
         <div className="recipe-intro">
@@ -49,17 +54,18 @@ class Recipe extends React.Component {
           </div>
           <div className="recipe-intro-description">
             <h3>{this.props.recipe.description}</h3>
-            <img src={this.props.recipe.img_url}/>
+            <img src={this.props.recipe.image_url}/>
           </div>
         </div>
 
-        <div className="recipe-categories">
+        {/* <div className="recipe-categories">
           {categoryLinks}
-        </div>
+        </div> */}
 
         {/* PLACEHOLDER FOR RATINGS */}
 
         <div className="recipe-instructions">
+          {/* PLACEHOLDER FOR PREPARATIONS */}
           {preparationList}
         </div>
       </div>

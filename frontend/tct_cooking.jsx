@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
+import { fetchRecipe } from "./util/recipe_util";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
   }
+  
+  window.fetchRecipe = fetchRecipe;
 
   
   const store = configureStore(preloadedState);

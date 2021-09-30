@@ -1,22 +1,13 @@
 import { connect } from "react-redux";
 import Recipe from "./recipe";
-
-function extractRecipeCategories (state, categoryIds) {
-  let categories = {};
-  categoryIds.forEach( categoryId => {
-    categories[categoryId] = state.entities.categories[categoryId]
-  })
-  return categories;
-}
+import { getRecipeData } from "../../actions/recipe_actions";
 
 const mapStateToProps = (state, ownProps) => ({
-  recipe: state.entities.recipes[ownProps.match.params.recipeId],
-  categories: extractRecipeCategories(
-    state, state.entities.recipes[ownProps.match.params.recipeId].categoryIds)
+  recipe: state.entities.recipes[ownProps.match.params.recipeId] ? state.entities.recipes[ownProps.match.params.recipeId] : {}
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
+  getRecipeData: (recipeId) => dispatch(getRecipeData(recipeId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
