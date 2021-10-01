@@ -13,10 +13,14 @@ Ingredient.destroy_all
 Category.destroy_all
 Comment.destroy_all
 Rating.destroy_all
-
+ 
 ######################### USER #########################
 
 demoUser = User.create({username: "demo_user", email: "demo_user@email.com", password: "password"})
+katharina = User.create({username: "Katharina", email: "katharina@gmail.com", password: "passwordkatharina"})
+kate = User.create({username: "Kate", email: "kate@gmail.com", password: "passwordkate"})
+brandon = User.create({username: "Brandon", email: "brandon@gmail.com", password: "passwordbrandon"})
+lisa = User.create({username: "Lisa", email: "lisa@gmail.com", password: "passwordlisa"})
 
 
 ######################### AUTHOR #########################
@@ -29,6 +33,11 @@ dChang = Author.create({
 mClark = Author.create({
   name: "Melissa Clark",
   bio: "Melissa Clark has been a columnist for the Food section since 2007. She reports on trends, creates recipes and appears in videos linked to her column, A Good Appetite. She’s also written dozens of cookbooks. A native of Brooklyn, she knows where to find the best bagel."
+})
+
+aRoman = Author.create({
+  name: "Alison Roman",
+  bio: "Alison E. Roman is an American food writer, chef and internet personality. She is best known for her viral recipes, such as #TheStew and #TheCookies, which were widely shared on social media platforms."
 })
 
 ######################### RECIPE #########################
@@ -53,6 +62,16 @@ honeyCakeWithPlums = Recipe.create({
   author_id: 2
 })
 
+labnehChileDip = Recipe.create({
+  title: "Labneh Dip With Sizzled Scallions and Chile",
+  description: 'In this very high-brow version of ranch dressing, adapted from "Nothing Fancy" by Alison Roman (Clarkson Potter, 2019), scalliony chile oil gets sizzled with cilantro stems (or chives) and swirled into thick, lemony labneh. If you can find green garlic, which tends to be hyperseasonal, use that or even ramps in place of the scallions. Serve with raw vegetables for dipping, as a spread with crackers or flatbread, or alongside roasted lamb or vegetables.',
+  image_url: "https://static01.nyt.com/images/2019/10/09/dining/07romanrex1/07romanrex1-articleLarge.jpg",
+  preparations: "Heat the olive oil, scallions, red-pepper flakes and cilantro in a small pot over medium-low heat. Cook, swirling occasionally, until the scallions and red-pepper flakes start to visually and audibly sizzle and frizzle and turn the oil a bright, fiery orange. Remove from the heat, and let cool enough to taste without burning your mouth, then season with salt and pepper.-$%-Combine the labneh and lemon juice in a medium bowl, and season with salt and pepper. Spoon into a bowl and swirl in the sizzled scallion mixture. Top with extra cilantro, if you like.",
+  time: "15 minutes",
+  yield: "2 cups",
+  author_id: 3
+})
+
 ######################### INGREDIENTS #########################
 
 Ingredient.create({name: "whole bone-in pork butt", quantity: "8-10", unit: "pounds", recipe_id: 1})
@@ -72,6 +91,7 @@ Ingredient.create({name: "bibb lettuce, leaves separated", quantity: "3", unit: 
 Ingredient.create({name: "fresh oysters (optional)", quantity: "1 or more", unit: "dozen", recipe_id: 1})
 Ingredient.create({name: "kimchi (available in many Asian markets, and online)", quantity: "", unit: "", recipe_id: 1})
 
+
 Ingredient.create({name: "Grease or nonstick spray, for the pan", quantity: "", unit: "", recipe_id: 2})
 Ingredient.create({name: "all-purpose flour, more for the pan", quantity: "300", unit: "grams", recipe_id: 2})
 Ingredient.create({name: "baking powder (2 teaspoons)", quantity: "10", unit: "grams", recipe_id: 2})
@@ -90,6 +110,16 @@ Ingredient.create({name: "ripe yellow plums", quantity: "1 1/2", unit: "pounds",
 Ingredient.create({name: "chopped lemon thyme leaves, or regular thyme leaves, plus branches for garnish", quantity: "1", unit: "tablespoon", recipe_id: 2})
 
 
+Ingredient.create({name: "olive oil", quantity: "1/3", unit: "cup", recipe_id: 3})
+Ingredient.create({name: "scallions (or green garlic), white and light green parts, thinly sliced", quantity: "4", unit: "", recipe_id: 3})
+Ingredient.create({name: "red-pepper flakes", quantity: "1", unit: "teaspoon", recipe_id: 3})
+Ingredient.create({name: "finely chopped fresh cilantro (leaves and tender stems) or chives, plus more for garnish", quantity: "2", unit: "tablespoons", recipe_id: 3})
+Ingredient.create({name: "Flaky sea salt", quantity: "", unit: "", recipe_id: 3})
+Ingredient.create({name: "Freshly ground black pepper", quantity: "", unit: "", recipe_id: 3})
+Ingredient.create({name: "labneh, full-fat Greek yogurt or sour cream", quantity: "2", unit: "cups", recipe_id: 3})
+Ingredient.create({name: "fresh lemon juice", quantity: "2", unit: "tablespoons", recipe_id: 3})
+
+
 ######################### CATEGORIES #########################
 
 Category.create({name: "Dinner"})
@@ -97,6 +127,9 @@ Category.create({name: "Asian"})
 Category.create({name: "Pork"})
 Category.create({name: "Main Course"})
 Category.create({name: "Dessert"})
+Category.create({name: "Snack"})
+Category.create({name: "Appetizer"})
+Category.create({name: "Vegetarian"})
 
 ######################### CATEGORIZARTIONS #########################
 
@@ -105,3 +138,32 @@ Categorization.create({category_id: 2, recipe_id: 1})
 Categorization.create({category_id: 3, recipe_id: 1})
 Categorization.create({category_id: 4, recipe_id: 1})
 Categorization.create({category_id: 5, recipe_id: 2})
+Categorization.create({category_id: 6, recipe_id: 3})
+Categorization.create({category_id: 7, recipe_id: 3})
+Categorization.create({category_id: 8, recipe_id: 3})
+
+######################### COMMENTS #########################
+
+Comment.create({
+  body: "I had to do the oil 3 times before I could use it, because the onions and flakes burned the first two times. In the end, I just infused the oil with the chilli flakes overnight in room temperature and just lightly fried the onions in it the next day. Delicious, though!",
+  author_id: 2,
+  recipe_id: 3
+})
+
+Comment.create({
+  body: "I just made this from her new cookbook, where it appears as written here. She should have indicated a range of time for the oil to be on the heat. Like others, mine never did turn color, and the cilantro turned black. I think it will taste good, but the instructions are quite ambiguous.",
+  author_id: 3,
+  recipe_id: 3
+})
+
+Comment.create({
+  body: "As others have commented, I too was waiting for the orange oil indicator and ended up burning the scallions and cilantro. This was set on the medium-low heat. Still used it and it was still delicious! Make sure to keep an eye on the oil and if it doesn't turn orange, just don't worry about it and cook until the scallions/cilantro start to lightly brown. It'll still be tasty.",
+  author_id: 4,
+  recipe_id: 3
+})
+
+Comment.create({
+  body: "The color of the oil will depend on your pepper flakes (eg how fresh they are). You want to pull it before the onions/cilantro start to brown. Delicious!",
+  author_id: 5,
+  recipe_id: 3
+})

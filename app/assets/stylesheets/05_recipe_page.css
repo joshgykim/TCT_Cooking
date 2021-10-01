@@ -6,6 +6,8 @@
 .recipe-heading {
   display: flex;
   flex-direction: column;
+  height: 100px;
+  justify-content:space-evenly;
 }
 
 .recipe-heading > h1 {
@@ -34,10 +36,16 @@
   padding-right: 50px;
 }
 
+.recipe-cat-rat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
 .recipe-categories {
   display: flex;
   flex-direction: row;
-  margin-bottom: 30px;
 }
 
 .recipe-instructions {
@@ -62,4 +70,18 @@
   width: 300px;
   text-align:left;
   padding-right: 30px;
+}
+
+.recipe-comments {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.recipe-comments-filler {
+  width: 400px;
+}
+
+.recipe-comment-list {
+  width: 600px;
 }

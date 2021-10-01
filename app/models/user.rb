@@ -50,4 +50,14 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: "Comment"
+
+  has_many :ratings,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "Rating"
+
 end

@@ -22,4 +22,9 @@ class Comment < ApplicationRecord
     foreign_key: :recipe_id,
     class_name: "Recipe"
 
+  belongs_to :commenter,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: "User"
+
 end

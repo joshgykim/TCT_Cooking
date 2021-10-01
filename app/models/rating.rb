@@ -21,4 +21,9 @@ class Rating < ApplicationRecord
     foreign_key: :recipe_id,
     class_name: "Recipe"
 
+  belongs_to :rater,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "User"
+
 end

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import CommentsIndex from "./comments_index";
+import NewCommentFormContainer from "./new_comment_form_container";
 
 class Recipe extends React.Component {
   constructor(props) {
@@ -10,21 +12,26 @@ class Recipe extends React.Component {
     this.props.getRecipeData(this.props.match.params.recipeId);
   }
 
-  componentWillUpdate() {
-    this.props.getRecipeData(this.props.match.params.recipeId);
+  componentDidUpdate(prevProp) {
+    if (this.props.match.params.recipeId !== prevProp.match.params.recipeId) {
+        this.props.getRecipeData(this.props.match.params.recipeId);
+    }
   }
 
   render() {
     if (this.props.recipe === null) return (<div className="recipe"></div>)
 
-    const categoryLinks = Object.keys(this.props.categories).map( (categoryId, i) => (
-        <div key={i}>
-          <Link to={`/categories/${categoryId}`}>
-            {this.props.categories[categoryId].name}
-            { (i === Object.keys(this.props.categories).length - 1 ? "" : ", ")}
-          </Link>
-        </div>
-      )
+    const categoryLinks = (
+      <div className="recipe-categories">
+        {Object.keys(this.props.categories).map( (categoryId, i) => (
+          <div key={i}>
+            <Link to={`/categories/${categoryId}`}>
+              {this.props.categories[categoryId].name}
+              { (i === Object.keys(this.props.categories).length - 1 ? "" : ", ")}
+            </Link>
+          </div>
+        ))}
+      </div>
     )
 
     const preparationList = (
@@ -63,10 +70,10 @@ class Recipe extends React.Component {
         <div className="recipe-heading">
           <h1>{this.props.recipe.title}</h1>
           <Link to={`/authors/${this.props.recipe.author.id}`}>
-            {this.props.recipe.author.name}
+            By {this.props.recipe.author.name}
           </Link>
         </div>
-
+        <hr/>
         <div className="recipe-intro">
           <div className="recipe-intro-facts">
             <h3>YIELD {this.props.recipe.yield}</h3>
@@ -77,16 +84,27 @@ class Recipe extends React.Component {
             <img src={this.props.recipe.image_url}/>
           </div>
         </div>
-
-        <div className="recipe-categories">
+        <hr/>
+        <div className="recipe-cat-rat">
           {categoryLinks}
+          <div className="recipe-ratings">
+            (RATINGS GO HERE)
+          </div>
         </div>
-
+        <hr/>
         {/* PLACEHOLDER FOR RATINGS */}
 
         <div className="recipe-instructions">
           {ingredientList}
           {preparationList}
+        </div>
+
+        <div className="recipe-comments">
+          <div className="recipe-comments-filler"></div>
+          <div className="recipe-comments-display">
+            <NewCommentFormContainer recipeId={this.props.match.params.recipeId}/>
+            <CommentsIndex comments={this.props.comments}/>
+          </div>
         </div>
       </div>
     )

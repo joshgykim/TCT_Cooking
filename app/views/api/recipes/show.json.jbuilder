@@ -8,8 +8,8 @@ json.recipe do
     :time,
     :image_url
   json.author do
-    json.name @recipe.author.name
     json.id @recipe.author.id
+    json.name @recipe.author.name
   end
 end
 
@@ -25,6 +25,18 @@ json.ingredients do
   @recipe.ingredients.each do |ingredient|
     json.set! ingredient.id do
       json.extract! ingredient, :name, :quantity, :unit
+    end
+  end
+end
+
+json.comments do
+  if @recipe.comments.empty?
+    json.noComments true
+  else
+    @recipe.comments.each do |comment|
+      json.set! comment.id do
+        json.partial! 'api/comments/comment', comment: comment
+      end
     end
   end
 end

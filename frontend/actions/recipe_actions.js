@@ -4,11 +4,12 @@ import {
 
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
 
-const receiveRecipe = ({ recipe, categories, ingredients }) => ({
+const receiveRecipe = ({ recipe, categories, ingredients, comments }) => ({
   type: RECEIVE_RECIPE,
   recipe,
   categories,
-  ingredients
+  ingredients,
+  comments
 })
 
 export const getRecipeData = (recipeId) => dispatch => fetchRecipe(recipeId)

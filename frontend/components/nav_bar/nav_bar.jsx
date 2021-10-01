@@ -7,7 +7,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const display = this.props.currentUser? (
+    const navBarRight = this.props.currentUser? (
       <div className="nav-bar-right">
         <h3>Welcome, {this.props.currentUser.username}</h3>
         <Link className="button" to="/">Your Grocery List</Link>
@@ -24,9 +24,11 @@ class NavBar extends React.Component {
     return (
       <header className="nav-bar">
         <div className="nav-bar-left">
-          <h1 className="logo">The California Times Cooking</h1>
+          <a href="http://localhost:3000/">
+            <h1 className="logo">The California Times Cooking</h1>
+          </a>
         </div>
-        {display}
+        {navBarRight}
       </header>
     )
   }
