@@ -26,6 +26,12 @@ class Recipe < ApplicationRecord
                         :image_url,
                         :author_id
 
+  def self.selectRecipes(mode)
+    if mode == "Home"
+      return self.where(id: 1..10)
+    end
+  end
+
   ######################### ASSOCIATIONS #########################
 
   belongs_to :author,

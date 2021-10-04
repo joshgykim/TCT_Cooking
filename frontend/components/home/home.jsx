@@ -1,6 +1,6 @@
 import React from 'react';
 import ROTDContainer from "./rotd/rotd_container";
-import MainSection from "./main_section/main_section";
+import MainSectionContainer from "./main_section/main_section_container";
 
 class Home extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <ROTDContainer />
-        <MainSection />
+        <MainSectionContainer />
       </div>
     )
   }

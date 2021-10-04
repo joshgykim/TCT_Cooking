@@ -13,19 +13,26 @@ class CommentItem extends React.Component {
     e.preventDefault();
     this.setState({ editMode: !this.state.editMode });
   }
+
+  componentDidUpdate(prevProp) {
+    if (prevProp.comment.id !== this.props.comment.id) {
+      this.setState({ editMode: true });
+    }
+  }
   
   render() {
-    console.log(this.props);
     return (this.state.editMode) ? (
-    <div className="comment-container">
-      <h2>{this.props.comment.commentor}</h2>
-      <h2>{this.props.comment.created_at}</h2>
-      <h2>{this.props.comment.body}</h2>
-      <button onClick={ (e) => this.toggleEditMode(e) }>Edit</button>
-      <hr/>
-    </div>
+      <div className="comment-container">
+        <h2>{this.props.comment.commentor}</h2>
+        <h2>{this.props.comment.created_at}</h2>
+        <h2>{this.props.comment.body}</h2>
+        <button onClick={ (e) => this.toggleEditMode(e) }>Edit</button>
+        <hr/>
+      </div>
     ) : (
-      <EditCommentFormContainer comment={this.props.comment}/>
+      <div className="comment-container">
+        <EditCommentFormContainer comment={this.props.comment} editMode={this.state}/>
+      </div>
     )
   }
 }

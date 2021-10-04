@@ -5,3 +5,11 @@ export const postComment = comment => (
     data: { comment }
   })
 )
+
+export const patchComment = comment => (
+  $.ajax({
+    url: `/api/comments/${comment.id}`,
+    method: 'patch',
+    data: { comment }
+  })
+)

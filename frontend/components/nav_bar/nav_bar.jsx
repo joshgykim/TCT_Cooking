@@ -24,9 +24,9 @@ class NavBar extends React.Component {
     return (
       <header className="nav-bar">
         <div className="nav-bar-left">
-          <a href="http://localhost:3000/">
+          <Link to="/">
             <h1 className="logo">The California Times Cooking</h1>
-          </a>
+          </Link>
         </div>
         {navBarRight}
       </header>

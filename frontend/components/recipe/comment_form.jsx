@@ -15,14 +15,18 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createComment(this.state);
-    this.setState(this.props.comment);
+    this.props.action(this.state);
+    if (this.props.formType === "Add Note") {
+      this.setState(this.props.comment);
+    } else {
+      
+    }
   }
 
   render() {
     return (
       <form onSubmit={ (e) => this.handleSubmit(e) }>
-        <h1>COOKING NOTES</h1>
+        <h1>{(this.props.formType === "Add Note") ? "COOKING NOTES" : "Edit"}</h1>
         <label>
           <textarea 
             value={this.state.body}
@@ -31,7 +35,7 @@ class CommentForm extends React.Component {
           />
         </label>
         <br/>
-        <button>Add Note</button>
+        <button>{this.props.formType}</button>
       </form>
     )
   }

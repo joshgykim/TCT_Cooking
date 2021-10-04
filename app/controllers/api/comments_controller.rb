@@ -8,7 +8,12 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-  def edit
+  def update
+    @comment = Comment.find_by(id: params[:id])
+    if @comment && @comment.update(comment_params)
+      render :info
+    else
+    end
   end
 
   def destroy

@@ -7,11 +7,12 @@ const mapStateToProps = (state, ownProps) => ({
     body: "",
     recipe_id: parseInt(ownProps.recipeId),
     author_id: state.session.currentUser.id
-  }
+  },
+  formType: "Add Note"
 })
 
 const mapDispatchToProps = dispatch => ({
-  createComment: comment => dispatch(createComment(comment))
+  action: comment => dispatch(createComment(comment))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)

@@ -1,17 +1,19 @@
 import { connect } from "react-redux";
 import CommentForm from "./comment_form";
-import { createComment } from "../../actions/comment_actions";
+import { updateComment } from "../../actions/comment_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   comment: {
-    body: "",
-    recipe_id: parseInt(ownProps.recipeId),
-    author_id: state.session.currentUser.id
-  }
+    id: ownProps.comment.id,
+    body: ownProps.comment.body,
+    recipe_id: 3,
+    author_id: ownProps.comment.commentorId
+  },
+  formType: "Edit Note"
 })
 
 const mapDispatchToProps = dispatch => ({
-  createComment: comment => dispatch(createComment(comment))
+  action: comment => dispatch(updateComment(comment))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)
