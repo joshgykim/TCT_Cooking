@@ -15,14 +15,17 @@
 }
 
 .main-section-recipes {
-  display:flex;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 10px;
 }
 
 .recipe-thumbnail {
   background: white;
   width: 220px;
-  height: 250px;
-  margin: 15px;
+  height: 260px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(223, 223, 223);
 }
 
 .recipe-thumbnail:hover {

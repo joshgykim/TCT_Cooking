@@ -1,0 +1,17 @@
+.category-page {
+  width: 950px;
+  margin: auto;
+}
+
+.category-page > h2 {
+  font-weight: bold;
+  font-size: 28px;
+  text-align:center;
+  padding: 20px;
+}
+
+.category-recipes-thumbnails {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 5px;
+}

@@ -50,6 +50,8 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  ######################### ASSOCIATIONS #########################
+
   has_many :comments,
     primary_key: :id,
     foreign_key: :author_id,
@@ -59,5 +61,18 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: "Rating"
+
+  has_many :recipe_boxes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "RecipeBox"
+  
+  has_many :saved_recipes,
+    through: :recipe_boxes,
+    source: :recipe
+  
+  has_many :saved_recipe_categories,
+    through: :saved_recipes,
+    source: :categories
 
 end

@@ -1,9 +1,11 @@
 .nav-bar {
+  background: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
   padding: 15px 10px;
+  border-bottom: 1px solid rgb(201, 201, 201);
 }
 
 .nav-bar-right {

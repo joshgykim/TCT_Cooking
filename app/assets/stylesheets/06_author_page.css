@@ -1,0 +1,41 @@
+.author-page {
+  width: 950px;
+  margin: auto;
+}
+
+.author-header {
+  margin: auto;
+}
+
+.author-header > h2 {
+  font-weight: bold;
+  font-size: 28px;
+  text-align:center;
+  padding: 30px;
+}
+
+.author-header > h4 {
+  color: #606060;
+  font-size: 18px;
+  height: 200px;
+}
+
+.author-header > hr {
+  border: 2px solid black;
+}
+
+.author-recipes {
+  margin: auto;
+}
+
+.author-recipes > h5 {
+  font-size: 17px;
+  padding: 15px 0px;
+}
+
+
+.author-recipes-thumbnails {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 5px;
+}

@@ -11,7 +11,7 @@ class NavBar extends React.Component {
       <div className="nav-bar-right">
         <h3>Welcome, {this.props.currentUser.username}</h3>
         <Link className="button" to="/">Your Grocery List</Link>
-        <Link className="button" to="/">Your Recipe Box</Link>
+        <Link className="button" to="/recipe-box">Your Recipe Box</Link>
         <button onClick={this.props.logoutUser}>(log out)</button>
       </div>
     ) : (

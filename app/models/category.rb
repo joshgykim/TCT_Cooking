@@ -3,7 +3,7 @@
 # Table name: categories
 #
 #  id         :bigint           not null, primary key
-#  name       :string           not null 
+#  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -18,4 +18,13 @@ class Category < ApplicationRecord
     primary_key: :id,
     foreign_key: :category_id,
     class_name: "Categorization"
+
+  has_many :recipes,
+    through: :categorizations,
+    source: :recipe
+  
+  has_many :savers,
+    through: :recipes,
+    source: :savers
+
 end

@@ -3,9 +3,8 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     if @user
-      render :show
+      render "api/users/recipebox"
     else
-      render json: @user.errors.full_messages, status: 404
     end
   end
 

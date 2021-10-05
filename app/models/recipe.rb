@@ -28,8 +28,28 @@ class Recipe < ApplicationRecord
 
   def self.selectRecipes(mode)
     if mode == "Home"
-      return self.where(id: 1..10)
+      return self.where(id: 1..11)
     end
+  end
+
+  def self.category_count(user_id, category_id)
+    self.joins(:savers)
+        .joins(:categories)
+        .where(
+          "users.id = ? AND categories.id = ?",
+          user_id,
+          category_id
+        ).length
+  end
+
+  def self.saved_recipe_by_category(user_id, category_id)
+    self.joins(:savers)
+        .joins(:categories)
+        .where(
+          "users.id = ? AND categories.id = ?",
+          user_id,
+          category_id
+        ).pluck(:id)
   end
 
   ######################### ASSOCIATIONS #########################
@@ -62,5 +82,14 @@ class Recipe < ApplicationRecord
   has_many :categories,
     through: :categorizations,
     source: :category
+
+  has_many :recipe_boxes,
+    primary_key: :id,
+    foreign_key: :recipe_id,
+    class_name: "RecipeBox"
+  
+  has_many :savers,
+    through: :recipe_boxes,
+    source: :user
 
 end

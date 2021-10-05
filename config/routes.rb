@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :recipes, only: [:show, :index, :create]
     resources :comments, only: [:create, :update, :destroy]
     resources :authors, only: [:show]
+    resources :categories, only: [:show]
+
     resources :ingredients, only: [:create]
   end
   
