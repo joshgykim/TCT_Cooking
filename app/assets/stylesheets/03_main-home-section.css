@@ -33,7 +33,7 @@
   box-shadow: 0 0px 20px rgb(0 0 0 / 0.2);
 }
 
-.recipe-thumbnail img {
+.recipe-thumbnail-image {
   width: 100%;
   height: 140px;
   object-fit:cover;
@@ -45,6 +45,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .thumb-title {
@@ -63,11 +64,46 @@
   justify-content:space-between;
 }
 
-.recipe-TS > img {
+.saved-button {
+  width: 20px;
+  height: 20px;
+  top: 78%;
+  left: 92%;
+  object-fit: contain;
+  position:absolute;
+  opacity: 0.4;
+}
+
+.unsaved-button {
+  width: 20px;
+  height: 20px;
+  top: 78%;
+  left: 92%;
+  object-fit: contain;
+  position:absolute;
+  opacity: 0.4;
+}
+
+.saved-button:hover {
   width: 25px;
   height: 25px;
-  object-fit:scale-down;
+  top: 77%;
+  left: 91%;
+  object-fit: contain;
+  position:absolute;
+  opacity: 0.5;
 }
+
+.unsaved-button:hover {
+  width: 25px;
+  height: 25px;
+  top: 77%;
+  left: 91%;
+  object-fit: contain;
+  position:absolute;
+  opacity: 0.5;
+}
+
 
 .thumb-time {
   color: grey;

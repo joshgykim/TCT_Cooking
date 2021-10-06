@@ -5,3 +5,11 @@ export const postRecipeBox = recipe_box => (
     data: { recipe_box }
   })
 )
+
+export const destroyRecipeBox = recipe_box => (
+  $.ajax({
+    url: "/api/recipe_boxes/0",
+    method: "delete",
+    data: { recipe_box }
+  })
+)

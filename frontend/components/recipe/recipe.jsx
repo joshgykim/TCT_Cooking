@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CommentsIndex from "./comments_index";
 import NewCommentFormContainer from "./new_comment_form_container";
 
-class Recipe extends React.Component {
+class Recipe extends React.Component { 
   constructor(props) {
     super(props);
   }

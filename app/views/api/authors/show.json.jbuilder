@@ -8,8 +8,7 @@ end
 json.recipes do
   @author.recipes.each do |recipe|
     json.set! recipe.id do
-      json.extract! recipe, :id, :title, :time, :image_url
-      json.authorName recipe.author.name
+      json.partial! 'api/recipes/thumbnail', recipe: recipe
     end
   end
 end

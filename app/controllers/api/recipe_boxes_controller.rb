@@ -8,6 +8,14 @@ class Api::RecipeBoxesController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe_box = RecipeBox.find_by(recipe_box_params)
+    if @recipe_box
+      @recipe_box.destroy
+      render :destroy
+    end
+  end
+
   private
 
   def recipe_box_params

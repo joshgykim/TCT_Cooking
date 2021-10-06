@@ -2,23 +2,30 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import SaveButtonContainer from './save_button_container';
 
-const RecipeThumbnail = (props) => (
-  <div className="recipe-thumbnail">
-    {/* PLACEHOLDER */}
-    <Link to={`/recipes/${props.recipe.id}`}>
-      <img src={props.recipe.image_url} />
-      <div className="recipe-summary">
-        <div className="recipe-TA">
-          <h3 className="thumb-title">{props.recipe.title}</h3>
-          <h4 className="thumb-author">{props.recipe.authorName}</h4>
-        </div>
-        <div className="recipe-TS">
-          <h4 className="thumb-time">{props.recipe.time}</h4> 
-          <SaveButtonContainer recipe={props.recipe} />
-        </div>
+class RecipeThumbnail extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return(
+      <div className="recipe-thumbnail">
+        <Link to={`/recipes/${this.props.recipe.id}`}>
+          <img className="recipe-thumbnail-image" src={this.props.recipe.image_url} />
+          <div className="recipe-summary">
+            <div className="recipe-TA">
+              <h3 className="thumb-title">{this.props.recipe.title}</h3>
+              <h4 className="thumb-author">{this.props.recipe.authorName}</h4>
+            </div>
+            <div className="recipe-TS">
+              <h4 className="thumb-time">{this.props.recipe.time}</h4> 
+            </div>
+              <SaveButtonContainer recipe={this.props.recipe} />
+          </div>
+        </Link>
       </div>
-    </Link>
-  </div>
-)
+    )
+  }
+}
 
 export default RecipeThumbnail;
