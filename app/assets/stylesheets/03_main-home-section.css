@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 2000px;
+  background: rgba(242,243,239,255)
 }
 
 .main-section h1 {
@@ -39,7 +40,7 @@
 }
 
 .recipe-summary {
-  height: 80px;
+  height: 100px;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -54,6 +55,18 @@
 
 .thumb-author {
   font-size: 12px;
+}
+
+.recipe-TS {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.recipe-TS > img {
+  width: 25px;
+  height: 25px;
+  object-fit:scale-down;
 }
 
 .thumb-time {

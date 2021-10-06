@@ -1,6 +1,7 @@
 .recipe {
   width: 1000px;
   margin: 20px auto;
+  background: white;
 }
 
 .recipe-heading {

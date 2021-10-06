@@ -1,8 +1,9 @@
 .recipebox {
   display: flex;
+  background: rgba(242,243,239,255)
 }
 
-.recipebox-thumbnail-section {
+.recipebox-thumbnail-section { 
   width: 950px;
   margin: 0px auto;
 }
