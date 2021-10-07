@@ -10,11 +10,11 @@ class SavedRecipeIndex extends React.Component {
   allRecipeThumbnails() {
     return this.props.filter ? ( 
       this.props.filter.map( (recipeId, i) => (
-        <RecipeThumbnail key={i} recipe={this.props.recipes[recipeId]}/>
+        <RecipeThumbnail key={recipeId} recipe={this.props.recipes[recipeId]}/>
       ))
     ) : ( 
       Object.keys(this.props.recipes).map( (recipeId, i) => (
-        <RecipeThumbnail key={i} recipe={this.props.recipes[recipeId]}/>
+        <RecipeThumbnail key={recipeId} recipe={this.props.recipes[recipeId]}/>
       ))
     )
   }

@@ -32,7 +32,7 @@ class Author extends React.Component {
         <h5>{`${recipeKeys.length} ` + (recipeKeys.length > 1 ? "results" : "result")}</h5>
           <div className="author-recipes-thumbnails">
             {recipeKeys.map( (recipeId, i) => (
-              <RecipeThumbnail key={i} recipe={this.props.recipes[recipeId]}/>
+              <RecipeThumbnail key={recipeId} recipe={this.props.recipes[recipeId]}/>
             ))}
           </div>
         </div>

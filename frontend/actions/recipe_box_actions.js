@@ -10,8 +10,9 @@ const receiveRecipeBox = ({recipe}) => ({
   recipe
 })
 
+
 export const createRecipeBox = (recipeBoxData) => dispatch => postRecipeBox(recipeBoxData)
-  .then( payload => dispatch(receiveRecipeBox(payload)) )
+.then( payload => dispatch(receiveRecipeBox(payload)) )
 
 export const deleteRecipeBox = (recipeBoxData) => dispatch => destroyRecipeBox(recipeBoxData)
-  .then( payload => dispatch(receiveRecipeBox(payload)) )
+.then( payload => dispatch(receiveRecipeBox(payload)) )

@@ -4,6 +4,8 @@ import { postRecipe, postIngredient } from "../../util/recipe_util";
 class RecipeCreator extends React.Component {
   constructor(props) {
     super(props);
+    
+    // // RECIPE
     // this.state = {
     //   title: "",
     //   description: "",
@@ -11,14 +13,16 @@ class RecipeCreator extends React.Component {
     //   time: "",
     //   preparations: "",
     //   image_url: "",
-    //   author_id: 3
+    //   author_id: 2
     // };
 
+
+    // INGREDIENT
     this.state = {
       name: "",
       quantity: "",
       unit: "",
-      recipe_id: 11
+      recipe_id: 18
     }
 
     this.updateField = this.updateField.bind(this);
@@ -41,7 +45,7 @@ class RecipeCreator extends React.Component {
       time: "",
       preparations: "",
       image_url: "",
-      author_id: 3
+      author_id: 2
     })
   }
 
@@ -52,7 +56,7 @@ class RecipeCreator extends React.Component {
       name: "",
       quantity: "",
       unit: "",
-      recipe_id: 11
+      recipe_id: 18
     })
   }
 

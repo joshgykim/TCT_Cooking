@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Hind+Siliguri:wght@600&display=swap');
+
 .nav-bar {
   background: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
-  padding: 15px 10px;
   border-bottom: 1px solid rgb(201, 201, 201);
+  border-top: 1px solid rgb(201, 201, 201);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .nav-bar-right {
@@ -13,17 +18,60 @@
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+}
+
+.nav-bar-left {
+  height: 63px;
+  border-right: 1px solid rgb(201, 201, 201);
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 30px;
 }
 
 .logo {
-  font-size: 30px;
+  display:flex;
+  align-items: center;
+  font-family: 'Galada', cursive;
+  text-decoration: none;
+  font-size: 24px;
+  color: #e33d26;
+  transform:translateY(4px);
+  padding-left: 6px;
 }
 
-.button {
-  margin-right: 10px;
+.logo-image {
+  width: 130px;
+  padding-left: 8px;
+  transform:translateY(-2px);
+}
+
+.your-page {
+  margin-right: 18px;
+  text-decoration: none;
+  color: #474747;
+  font-size: 13px;
+}
+
+.your-page-box {
+  margin-right: 18px;
+  text-decoration: none;
+  color: #e33d26;
+  font-size: 13px;
 }
 
 #recipe-box-button {
   width: 150px;
   text-align: center;
+}
+
+.home {
+  display: flex;
+  flex-direction:column;
+}
+
+.nav-bar-height {
+  height: 63px;
 }

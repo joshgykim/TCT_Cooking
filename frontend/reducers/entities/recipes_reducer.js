@@ -1,7 +1,7 @@
 import { 
   RECEIVE_RECIPE,
   RECEIVE_RECIPES
- } from "../../actions/recipe_actions";
+} from "../../actions/recipe_actions";
 import { RECEIVE_AUTHOR } from "../../actions/author_actions";
 import { RECEIVE_CATEGORY } from "../../actions/category_actions";
 import { RECEIVE_USER } from "../../actions/user_actions";

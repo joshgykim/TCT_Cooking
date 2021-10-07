@@ -28,7 +28,7 @@ class Recipe < ApplicationRecord
 
   def self.selectRecipes(mode)
     if mode == "Home"
-      return self.where(id: 1..11)
+      return self.where(id: 1..18)
     end
   end
 

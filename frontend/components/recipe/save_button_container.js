@@ -6,9 +6,9 @@ import { connect } from "react-redux";
 import SaveButton from "./save_button";
 
 const mapStateToProps = (state, ownProps) => ({
-  saved: ownProps.recipe.saved,
-  recipe: ownProps.recipe,
-  currentUser: state.session.currentUser
+  saved: state.entities.recipes[ownProps.recipeId].saved,
+  recipe: state.entities.recipes[ownProps.recipeId],
+  currentUser: state.session.currentUser,
 })
 
 const mapDispatchToProps = dispatch => ({

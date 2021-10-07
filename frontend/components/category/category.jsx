@@ -26,7 +26,7 @@ class Category extends React.Component {
         <hr/>
         <div className="category-recipes-thumbnails">
           {Object.keys(this.props.recipes).map( (recipeId, i) => (
-            <RecipeThumbnail key={i} recipe={this.props.recipes[recipeId]}/>
+            <RecipeThumbnail key={recipeId} recipe={this.props.recipes[recipeId]}/>
           ))}
         </div>
       </div>

@@ -9,9 +9,8 @@ class NavBar extends React.Component {
   render() {
     const navBarRight = this.props.currentUser? (
       <div className="nav-bar-right">
-        <h3>Welcome, {this.props.currentUser.username}</h3>
-        <Link className="button" to="/">Your Grocery List</Link>
-        <Link className="button" to="/recipe-box">Your Recipe Box</Link>
+        <Link className="your-page" to="/">YOUR GROCERY LIST</Link>
+        <Link className="your-page-box" to="/recipe-box">YOUR RECIPE BOX</Link>
         <button onClick={this.props.logoutUser}>(log out)</button>
       </div>
     ) : (
@@ -22,14 +21,18 @@ class NavBar extends React.Component {
     )
 
     return (
-      <header className="nav-bar">
-        <div className="nav-bar-left">
-          <Link to="/">
-            <h1 className="logo">The California Times Cooking</h1>
-          </Link>
+      <div>
+        <header className="nav-bar">
+          <div className="nav-bar-left">
+            <Link className="logo" to="/">Cali
+              <img className="logo-image" src="https://mwcm.nyt.com/dam/jcr:c46c3399-24e9-47ea-b327-4694aeaf8910/cooking.png"/>
+            </Link>
+          </div>
+          {navBarRight}
+        </header>
+        <div className="nav-bar-height"> hello
         </div>
-        {navBarRight}
-      </header>
+      </div>
     )
   }
 }

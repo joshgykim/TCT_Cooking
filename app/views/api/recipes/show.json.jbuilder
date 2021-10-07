@@ -11,6 +11,7 @@ json.recipe do
     json.id @recipe.author.id
     json.name @recipe.author.name
   end
+  json.saved !@recipe.savers.where(id: current_user.id).empty?
 end
 
 json.categories do

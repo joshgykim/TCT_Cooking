@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&family=Galada&family=Hind+Siliguri:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+
 .main-section {
   display: flex;
   flex-direction: column;
@@ -6,13 +10,39 @@
   background: rgba(242,243,239,255)
 }
 
-.main-section h1 {
-  padding: 25px;
-  font-size: 40px;
+.main-section > h1 {
+  padding-top: 150px;
+  padding-bottom: 10px;
+  font-size: 35px;
+  font-family: 'Bevan', cursive;
+  color: #2a2a2a;
+
+}
+
+.josh-suggestion {
+  width: 940px;
+  font-family: 'Cardo', serif;
+  font-size: 26px;
+  color: #222222;
+  transform:translateX(12px);
+  margin: 10px;
+}
+
+.josh-suggestion > h3 {
+  color: #999999;
+  margin-top: 8px;
+  margin-bottom: 30px;
 }
 
 .main-section > h3 {
   font-size: 14px;
+  padding-bottom: 35px;
+}
+
+.main-section > hr {
+  border: 2px solid black;
+  width: 940px;
+  transform:translateX(12px)
 }
 
 .main-section-recipes {
@@ -50,12 +80,14 @@
 
 .thumb-title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 5px;
+  color: black;
 }
 
 .thumb-author {
   font-size: 12px;
+  color: #555555;
 }
 
 .recipe-TS {
@@ -104,10 +136,27 @@
   opacity: 0.5;
 }
 
+.profile {
+  height: 250px;
+  background: #e6e7e2
+}
+
+.about {
+  height: 400px;
+  background: #000000;
+}
 
 .thumb-time {
   color: grey;
   font-size: 12px;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.thumb-author {
+  color: #666666;
+  font-size: 12px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
 }
 
 .seeder {

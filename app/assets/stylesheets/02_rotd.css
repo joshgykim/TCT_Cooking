@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bevan&family=Galada&family=Hind+Siliguri:wght@600&display=swap');
+
 .rotd {
   width: 100vw;
   height: 700px;
@@ -7,7 +10,7 @@
 
 .rotd-image {
   width: 100vw;
-  height: 700px;
+  height: 800px;
   object-fit: cover;
   object-position:bottom;
 }
@@ -15,7 +18,7 @@
 .rotd-label {
   background: white;
   position: absolute;
-  top: 330px;
+  top: 420px;
   left: 80px;
   width: 330px;
   height: 300px;
@@ -23,6 +26,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Cardo', serif;
+}
+
+.rotd-label > h3 {
+  color: #777777;
 }
 
 .rotd-label-circle {
@@ -40,10 +48,6 @@
   left: -60px;
 }
 
-.rotd-label-circle h3 {
-  width: 100px;
-  text-align: center;
-}
 
 .rotd-label h1 {
   font-size: 30px;
@@ -53,4 +57,11 @@
 .rotd-label h3 {
   margin: 10px 30px;
   font-size: 15px;
+}
+
+.rotd-label-circle h3 {
+  width: 100px;
+  text-align: center;
+  font-family: 'Bevan', cursive;
+  font-size: 12px;
 }

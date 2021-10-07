@@ -12,6 +12,12 @@ class Home extends React.Component {
       <div className="home">
         <ROTDContainer />
         <MainSectionContainer />
+        <div className="profile">
+
+        </div>
+        <div className="about">
+
+        </div>
       </div>
     )
   }
