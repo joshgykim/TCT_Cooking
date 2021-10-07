@@ -17,10 +17,8 @@ class RecipeThumbnail extends React.Component {
               <h3 className="thumb-title">{this.props.recipe.title}</h3>
               <h4 className="thumb-author">{this.props.recipe.authorName}</h4>
             </div>
-            <div className="recipe-TS">
-              <h4 className="thumb-time">{this.props.recipe.time}</h4> 
-            </div>
-              <SaveButtonContainer recipeId={this.props.recipe.id} />
+            <h4 className="thumb-time">{this.props.recipe.time}</h4> 
+            <SaveButtonContainer recipeId={this.props.recipe.id} />
           </div>
         </Link>
       </div>

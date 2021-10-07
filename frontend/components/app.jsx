@@ -20,8 +20,12 @@ export default () => (
       <Route exact path="/recipes/:recipeId" component={RecipeContainer}/>
       <Route exact path="/authors/:authorId" component={AuthorContainer}/>
       <Route exact path="/categories/:categoryId" component={CategoryContainer}/>
-      <Route exact path="/create-recipe" component={RecipeCreator}/>
+      {/* <Route exact path="/create-recipe" component={RecipeCreator}/> */}
       <Route component={NotFound}/>
     </Switch>
+    <div className="profile">
+    </div>
+    <div className="about">
+    </div>
   </div>
 );

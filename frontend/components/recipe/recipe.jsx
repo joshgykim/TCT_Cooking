@@ -96,8 +96,8 @@ class Recipe extends React.Component {
             <h3>
               <span className="recipe-intro-fact-key">{"TIME" + "    "}</span>
               <span className="recipe-intro-fact-value">{this.props.recipe.time}</span>
-              {/* <SaveButtonContainer recipeId={this.props.recipe.id} /> */}
             </h3>
+            <SaveButtonContainer recipeId={this.props.recipe.id} isRecipePage={true}/>
           </div>
           <div className="recipe-intro-description">
             <h3>{this.props.recipe.description}</h3>
@@ -128,6 +128,7 @@ class Recipe extends React.Component {
             <CommentsIndex comments={this.props.comments}/>
           </div>
         </div>
+        <SaveButtonContainer recipeId={this.props.recipe.id} isRecipePage={true}/>
       </div>
     )
   }

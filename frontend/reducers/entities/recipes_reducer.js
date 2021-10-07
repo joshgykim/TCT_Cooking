@@ -17,7 +17,8 @@ const recipesReducer = (state = {}, action) => {
       nextState[action.recipe.id] = action.recipe;
       return nextState;
     case RECEIVE_RECIPE_BOX:
-      nextState[action.recipe.id] = action.recipe;
+      console.log(action.recipe)
+      nextState[action.recipe.id].saved = action.recipe.saved;
       return nextState;
     case RECEIVE_AUTHOR:
       return action.recipes;

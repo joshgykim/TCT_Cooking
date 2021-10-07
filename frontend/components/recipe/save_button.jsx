@@ -32,18 +32,40 @@ class SaveButton extends React.Component {
   }
 
   render() {
-    return (this.state.saved) ? (
-      <img 
-        className="saved-button"
-        src="https://img-premium.flaticon.com/png/512/880/premium/880612.png?token=exp=1633539970~hmac=9447639914a4a3aa3f70fe7489a842ce"
-        onClick={ (e) => this.unsaveRecipe(e)}
+
+    let button;
+
+    if (this.props.isRecipePage) {
+      button = (this.state.saved) ? (
+        <button className="button-recipe-page" onClick={ (e) => this.unsaveRecipe(e) } >
+          <img className="button-image-recipe-page" src="https://img-premium.flaticon.com/png/512/880/premium/880612.png?token=exp=1633539970~hmac=9447639914a4a3aa3f70fe7489a842ce"/>
+          &nbsp;Saved&nbsp;
+        </button>
+      ) : (
+        <button className="button-recipe-page" onClick={ (e) => this.saveRecipe(e) } >
+          <img className="button-image-recipe-page" src="https://img-premium.flaticon.com/png/512/880/premium/880571.png?token=exp=1633539970~hmac=cdc0725c819ffe24e0ab4dd8bdf950fd"/>
+          &nbsp;Save to Recipe Box&nbsp;
+        </button>
+      )
+    } else {
+      button = (this.state.saved) ? (
+        <img 
+          className="saved-button"
+          src="https://img-premium.flaticon.com/png/512/880/premium/880612.png?token=exp=1633539970~hmac=9447639914a4a3aa3f70fe7489a842ce"
+          onClick={ (e) => this.unsaveRecipe(e)}
+          />
+          ) : (
+            <img 
+          className="unsaved-button" 
+          src="https://img-premium.flaticon.com/png/512/880/premium/880571.png?token=exp=1633539970~hmac=cdc0725c819ffe24e0ab4dd8bdf950fd"
+          onClick={ (e) => this.saveRecipe(e)}
         />
-        ) : (
-          <img 
-        className="unsaved-button" 
-        src="https://img-premium.flaticon.com/png/512/880/premium/880571.png?token=exp=1633539970~hmac=cdc0725c819ffe24e0ab4dd8bdf950fd"
-        onClick={ (e) => this.saveRecipe(e)}
-      />
+      )
+    }
+    return (
+      <div>
+        {button}
+      </div>
     )
   }
 }

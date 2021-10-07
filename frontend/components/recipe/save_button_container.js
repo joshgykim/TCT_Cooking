@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
   saved: state.entities.recipes[ownProps.recipeId].saved,
   recipe: state.entities.recipes[ownProps.recipeId],
   currentUser: state.session.currentUser,
+  isRecipePage: ownProps.isRecipePage
 })
 
 const mapDispatchToProps = dispatch => ({

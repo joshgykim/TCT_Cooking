@@ -39,6 +39,11 @@
   padding: 30px 0px;
 }
 
+.recipe-intro-facts {
+  position: relative;
+  margin-bottom: 20px;
+}
+
 .recipe-intro-fact-value {
   font-family: 'Hind Siliguri';
   font-size: 13px;
@@ -174,4 +179,29 @@
 
 .comment-container {
   margin: 30px 0px;
+}
+
+.button-recipe-page {
+  border: none;
+  color: white;
+  background: #e33d26;
+  display:flex;
+  align-items: center;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 4px;
+  width: 180px;
+  position: absolute;
+  top: 0px;
+  left: 820px;
+}
+
+.button-image-recipe-page {
+  width: 17px;
+  filter: invert(1);
+  padding-left: 5px;
+}
+
+.button-recipe-page:hover {
+  background: #c43420;
 }
