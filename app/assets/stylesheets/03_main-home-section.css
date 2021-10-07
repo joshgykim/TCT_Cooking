@@ -60,7 +60,7 @@
 }
 
 .recipe-thumbnail:hover {
-  box-shadow: 0 0px 20px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .recipe-thumbnail-image {
