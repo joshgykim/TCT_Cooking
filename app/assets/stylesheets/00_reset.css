@@ -19,6 +19,7 @@ time, mark, audio, video {
 	font: inherit;
 	text-decoration: none;
 	vertical-align: baseline;
+	color: black;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

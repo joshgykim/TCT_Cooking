@@ -8,7 +8,8 @@ const commentsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_RECIPE:
-      return action.comments
+      if (action.comments === undefined) return {};
+      return action.comments;
     case RECEIVE_COMMENT:
       let nextState = Object.assign({}, state);
       nextState[action.comment.id] = action.comment;

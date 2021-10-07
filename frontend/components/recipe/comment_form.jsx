@@ -19,16 +19,21 @@ class CommentForm extends React.Component {
     if (this.props.formType === "Add Note") {
       this.setState(this.props.comment);
     } else {
-      
+      this.setState(this.props.comment);
+      this.props.toggleEditMode(e)
     }
   }
 
   render() {
+    let cancelButton = (this.props.formType === "Edit Note") ? (
+      <button onClick={(e) => this.props.toggleEditMode(e)}>Cancel</button>
+    ) : (null)
     return (
-      <form onSubmit={ (e) => this.handleSubmit(e) }>
-        <h1>{(this.props.formType === "Add Note") ? "COOKING NOTES" : "Edit"}</h1>
+      <form className="comment-form" onSubmit={ (e) => this.handleSubmit(e) }>
+        <h1>{(this.props.formType === "Add Note") ? "COOKING NOTES" : "EDIT NOTE"}</h1>
         <label>
           <textarea 
+            required
             value={this.state.body}
             onChange={ (e) => this.updateBody(e) }
             placeholder="Share your notes with other cooks"
@@ -36,6 +41,7 @@ class CommentForm extends React.Component {
         </label>
         <br/>
         <button>{this.props.formType}</button>
+        {cancelButton}
       </form>
     )
   }

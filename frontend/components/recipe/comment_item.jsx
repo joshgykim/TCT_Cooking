@@ -21,17 +21,38 @@ class CommentItem extends React.Component {
   }
   
   render() {
+    let editButton = (this.props.comment.commentorId === this.props.currentUserId) ? ( 
+      <button
+        className="comment-edit-button"
+        onClick={ (e) => this.toggleEditMode(e) }>Edit
+      </button>
+    ) : (null)
     return (this.state.editMode) ? (
-      <div className="comment-container">
-        <h2>{this.props.comment.commentor}</h2>
-        <h2>{this.props.comment.created_at}</h2>
-        <h2>{this.props.comment.body}</h2>
-        <button onClick={ (e) => this.toggleEditMode(e) }>Edit</button>
-        <hr/>
+      <div>
+        <div className="comment-container">
+          <div className="comment-pic">
+            <img src="https://static01.nyt.com/applications/cooking/47a639a/assets/user-img-tomato.png"/>
+          </div>
+          <div className="comment-text">
+            <span className="commentor-name">{this.props.comment.commentor}&nbsp;&nbsp;</span>
+            <span className="commentor-date">|&nbsp;&nbsp;{
+              (this.props.comment.created_at) ?
+              this.props.comment.created_at.toString().slice(0, 10) : null}
+            </span>
+            {editButton}
+            <h2>{this.props.comment.body}</h2>
+          </div>
+        </div>
+        <hr className="comment-break"/>
       </div>
     ) : (
       <div className="comment-container">
-        <EditCommentFormContainer comment={this.props.comment} editMode={this.state}/>
+        <EditCommentFormContainer
+          comment={this.props.comment}
+          editMode={this.state}
+          toggleEditMode={(e) => this.toggleEditMode(e)}
+        />
+        <hr className="comment-break"/>
       </div>
     )
   }

@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
     state.entities.recipes[ownProps.match.params.recipeId]) : (null),
   categories: state.entities.categories,
   ingredients: state.entities.ingredients,
-  comments: state.entities.comments
+  comments: state.entities.comments ? state.entities.comments : {}
 })
 
 const mapDispatchToProps = (dispatch) => ({

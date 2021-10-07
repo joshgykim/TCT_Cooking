@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
     recipe_id: 3,
     author_id: ownProps.comment.commentorId
   },
+  toggleEditMode: ownProps.toggleEditMode,
   formType: "Edit Note"
 })
 

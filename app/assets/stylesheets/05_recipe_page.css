@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&family=Galada&family=Hind+Siliguri:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+
 .recipe {
   width: 1000px;
   margin: 20px auto;
@@ -9,10 +13,24 @@
   flex-direction: column;
   height: 100px;
   justify-content:space-evenly;
+  color: black;
+}
+
+.recipe-heading span {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.recipe-heading .recipe-author-name {
+  text-decoration:underline;
 }
 
 .recipe-heading > h1 {
-  font-size: 30px;
+  font-size: 40px;
+  font-family: 'Cardo', serif;
+  font-weight: 300px;
+  color: #444444;
 }
 
 .recipe-intro {
@@ -21,10 +39,25 @@
   padding: 30px 0px;
 }
 
+.recipe-intro-fact-value {
+  font-family: 'Hind Siliguri';
+  font-size: 13px;
+}
+
+.recipe-intro-fact-key {
+  font-family: 'Bevan', cursive;
+  font-size: 12px;
+  color: #555555;
+  padding-right: 10px;
+}
+
+
 .recipe-intro-description {
   display: flex;
   flex-direction: row;
   padding-top: 20px;
+  font-family: 'Cardo', serif;
+  line-height: 1.5;
 }
 
 .recipe-intro-description > img {
@@ -49,16 +82,68 @@
   flex-direction: row;
 }
 
+.recipe-categories span {
+  color: #e33d26;
+  font-family: 'Hind Siliguri';
+}
+
+.recipe-cat-rat-br {
+  border: 1px solid black;
+}
+
 .recipe-instructions {
   display: flex;
   flex-direction: row;
+}
+
+.recipe-instruction {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-ingredient-label {
+  font-family: 'Bevan', cursive;
+  font-size: 12px;
+  color: #555555;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.recipe-preparation-label {
+  font-family: 'Bevan', cursive;
+  font-size: 12px;
+  color: #555555;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.recipe-preparations h2 {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.recipe-preparations li {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  line-height: 1.5;
+}
+
+.recipe-ingredients {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transform:translateX(-20px);
 }
 
 .recipe-ingredients > li {
   display: flex;
   flex-direction: row;
   width: 400px;
-  padding-bottom: 10px
+  padding-bottom: 20px
 }
 
 .ingredient-quantity {
