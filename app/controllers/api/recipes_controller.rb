@@ -2,6 +2,7 @@ class Api::RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.selectRecipes(params[:mode])
+    @collections = Collection.selectCollections(params[:mode])
     render :index
   end
 

@@ -4,13 +4,15 @@ import categoriesReducer from "./entities/categories_reducer";
 import ingredientsReducer from "./entities/ingredients_reducer";
 import commentsReducer from "./entities/comments_reducer";
 import authorsReducer from "./entities/authors_reducer";
+import collectionsReducer from "./entities/collections_reducer";
 
 const entitiesReducer = combineReducers({
   recipes: recipesReducer,
   categories: categoriesReducer,
   ingredients: ingredientsReducer,
   comments: commentsReducer,
-  author: authorsReducer
+  author: authorsReducer,
+  collections: collectionsReducer
 })
 
 export default entitiesReducer;

@@ -5,3 +5,15 @@ json.recipes do
     end
   end
 end
+
+json.collections do
+  @collections.each do |collection|
+    json.set! collection.id do
+      rcps = collection.recipes
+
+      json.extract! collection, :name
+      json.numRecipes rcps.length
+      json.image_url rcps.first.image_url
+    end
+  end
+end

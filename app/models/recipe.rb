@@ -28,7 +28,7 @@ class Recipe < ApplicationRecord
 
   def self.selectRecipes(mode)
     if mode == "Home"
-      return self.where(id: 1..18)
+      return self.where(id: 1..12)
     end
   end
 
@@ -92,4 +92,13 @@ class Recipe < ApplicationRecord
     through: :recipe_boxes,
     source: :user
 
+  has_many :collectings,
+    primary_key: :id,
+    foreign_key: :recipe_id,
+    class_name: "Collecting"
+
+  has_many :collections,
+    through: :collectings,
+    source: :collection
+  
 end

@@ -14,6 +14,8 @@ Category.destroy_all
 Comment.destroy_all
 Rating.destroy_all
 RecipeBox.destroy_all
+Collection.destroy_all
+Collecting.destroy_all
  
 ######################### USER #########################
 
@@ -592,3 +594,38 @@ RecipeBox.create({user_id: 1, recipe_id: 11})
 RecipeBox.create({user_id: 1, recipe_id: 13})
 RecipeBox.create({user_id: 1, recipe_id: 9})
 RecipeBox.create({user_id: 1, recipe_id: 8})
+
+######################### COLLECTIONS #########################
+
+Collection.create(name: "Easy Baking Recipes", description: "These easy baking recipes will inspire you to set yourself a new cooking challenge, just for the fun of it, or to spend a few hours in the kitchen with someone you care about.")
+Collection.create(name: "Alison Swears By Them", description: "Alison's recipes’ combination of ease and taste seamlessly fit into our current, uneasy reality of sheltering in place. Hence, their popularity! Enjoy!")
+Collection.create(name: "Family-Style Dinner Party", description: "Because who cares about plating anything for anyone?")
+Collection.create(name: "Something Fast for Weeknights", description: "Weeknight dinners can sometimes be a challenge, but not with these ultrafast recipes: Filling and nourishing, they all hit the table in 30 minutes or less.")
+
+######################### COLLECTINGS #########################
+
+Collecting.create(collection_id: 1, recipe_id: 9)
+Collecting.create(collection_id: 1, recipe_id: 5)
+Collecting.create(collection_id: 1, recipe_id: 2)
+
+Collecting.create(collection_id: 2, recipe_id: 3)
+Collecting.create(collection_id: 2, recipe_id: 4)
+Collecting.create(collection_id: 2, recipe_id: 6)
+Collecting.create(collection_id: 2, recipe_id: 10)
+Collecting.create(collection_id: 2, recipe_id: 11)
+
+Collecting.create(collection_id: 3, recipe_id: 1)
+Collecting.create(collection_id: 3, recipe_id: 12)
+Collecting.create(collection_id: 3, recipe_id: 8)
+
+Collecting.create(collection_id: 4, recipe_id: 4)
+Collecting.create(collection_id: 4, recipe_id: 6)
+Collecting.create(collection_id: 4, recipe_id: 16)
+Collecting.create(collection_id: 4, recipe_id: 18)
+
+
+
+
+
+
+

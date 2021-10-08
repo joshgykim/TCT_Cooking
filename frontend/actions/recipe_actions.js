@@ -14,9 +14,10 @@ const receiveRecipe = ({ recipe, categories, ingredients, comments }) => ({
   comments
 })
 
-const receiveRecipes = ({ recipes }) => ({
+const receiveRecipes = ({ recipes, collections }) => ({
   type: RECEIVE_RECIPES,
-  recipes
+  recipes,
+  collections
 })
 
 export const getRecipeData = (recipeId) => dispatch => fetchRecipe(recipeId)

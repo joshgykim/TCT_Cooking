@@ -1,5 +1,6 @@
 import React from "react";
 import RecipeThumbnail from "../../recipe/recipe_thumbnail";
+import CollectionThumbnail from "../../collection/collection_thumbnail";
 
 class MainSection extends React.Component {
   constructor(props) {
@@ -34,8 +35,20 @@ class MainSection extends React.Component {
         </div>
         <div className="main-section-recipes">
           {Object.keys(this.props.recipes).map( (recipeId, i) => (
-            <RecipeThumbnail key={recipeId} recipe={this.props.recipes[recipeId]}/>
+            <RecipeThumbnail
+              key={recipeId}
+              recipe={this.props.recipes[recipeId]}
+            />
           ))}
+        </div>
+        <hr/>
+        <div className="main-section-collections">
+            {Object.keys(this.props.collections).map( (collectionId, i) => (
+              <CollectionThumbnail
+                key={collectionId}
+                collection={this.props.collections[collectionId]}
+              />
+            ))}
         </div>
 
       </div>

@@ -4,6 +4,7 @@ import { getRecipes } from "../../../actions/recipe_actions";
 
 const mapStateToProps = (state) => ({
   recipes: state.entities.recipes,
+  collections: state.entities.collections,
   currentUser: state.session.currentUser
 })
 
