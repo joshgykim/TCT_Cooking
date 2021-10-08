@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :authors, only: [:show]
     resources :categories, only: [:show]
     resources :recipe_boxes, only: [:create, :destroy]
+    resources :collections, only: [:show]
 
     resources :ingredients, only: [:create]
   end

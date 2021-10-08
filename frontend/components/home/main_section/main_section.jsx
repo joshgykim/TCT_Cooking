@@ -42,15 +42,19 @@ class MainSection extends React.Component {
           ))}
         </div>
         <hr/>
+        <div className="josh-suggestion">
+          <h1>More From Our Editors</h1>
+          <h3>Weeknight suppers, seasonal favorites and other ideas for this week.</h3>
+        </div>
         <div className="main-section-collections">
             {Object.keys(this.props.collections).map( (collectionId, i) => (
               <CollectionThumbnail
                 key={collectionId}
                 collection={this.props.collections[collectionId]}
+                collectionId={collectionId}
               />
             ))}
         </div>
-
       </div>
     )
   }

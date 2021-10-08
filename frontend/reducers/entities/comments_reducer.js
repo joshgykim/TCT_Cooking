@@ -3,6 +3,7 @@ import { RECEIVE_COMMENT } from "../../actions/comment_actions";
 import { RECEIVE_AUTHOR } from "../../actions/author_actions";
 import { RECEIVE_CATEGORY } from "../../actions/category_actions";
 import { RECEIVE_USER } from "../../actions/user_actions";
+import { RECEIVE_COLLECTION } from "../../actions/collection_actions";
 
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -19,6 +20,8 @@ const commentsReducer = (state = {}, action) => {
     case RECEIVE_CATEGORY:
       return {};
     case RECEIVE_USER:
+      return {};
+    case RECEIVE_COLLECTION:
       return {};
     default:
       return state;

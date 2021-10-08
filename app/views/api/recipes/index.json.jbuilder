@@ -13,7 +13,7 @@ json.collections do
 
       json.extract! collection, :name
       json.numRecipes rcps.length
-      json.image_url rcps.first.image_url
+      json.image_url rcps.last.image_url
     end
   end
 end

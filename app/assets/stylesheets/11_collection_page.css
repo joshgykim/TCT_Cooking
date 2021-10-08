@@ -1,0 +1,44 @@
+.collection-page {
+  width: 950px;
+  margin: auto;
+}
+
+.collection-header {
+  margin: auto;
+}
+
+.collection-header > h2 {
+  font-weight: bold;
+  font-size: 28px;
+  text-align:center;
+  padding: 30px;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.collection-header > h4 {
+  color: #606060;
+  font-size: 18px;
+  height: 200px;
+  font-family: 'Hind Siliguri', sans-serif;
+  line-height: 1.5;
+}
+
+.collection-header > hr {
+  border: 2px solid black;
+}
+
+.collection-recipes {
+  margin: auto;
+}
+
+.collection-recipes > h5 {
+  font-size: 17px;
+  padding: 15px 0px;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.collection-recipes-thumbnails {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 5px;
+}

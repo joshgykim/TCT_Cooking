@@ -6,6 +6,7 @@ import { RECEIVE_AUTHOR } from "../../actions/author_actions";
 import { RECEIVE_CATEGORY } from "../../actions/category_actions";
 import { RECEIVE_USER } from "../../actions/user_actions";
 import { RECEIVE_RECIPE_BOX } from "../../actions/recipe_box_actions";
+import { RECEIVE_COLLECTION } from "../../actions/collection_actions";
 
 const recipesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -20,6 +21,8 @@ const recipesReducer = (state = {}, action) => {
       nextState[action.recipe.id].saved = action.recipe.saved;
       return nextState;
     case RECEIVE_AUTHOR:
+      return action.recipes;
+    case RECEIVE_COLLECTION:
       return action.recipes;
     case RECEIVE_CATEGORY:
       return action.recipes;
