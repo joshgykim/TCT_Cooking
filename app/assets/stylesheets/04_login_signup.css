@@ -27,6 +27,19 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.session-form-left > img {
+  background: rgb(35, 37, 44);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Cardo', serif;
+  height: 600px;
+  object-fit:cover;
 }
 
 .session-form-left > h2 {
@@ -34,7 +47,10 @@
   font-size: 20px;
   text-align: center;
   width: 400px;
-  padding-top: 30px;
+  padding-top: 25px;
+  font-family: 'Cardo', serif;
+  position: absolute;
+  line-height: 1.5;
 }
 
 .session-form-right {
@@ -43,26 +59,91 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.session-form-right > h1 {
+  color: #444444;
+  font-family: 'Cardo', serif;
+  width: 280px;
+  font-size: 20px;
+  line-height: 1.5;
+  position: absolute;
+  top: 30px;
 }
 
 .session-form-right > form {
-  padding: 30px;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:flex-end;
+  align-items:flex-start;
 }
 
 .session-form-right > form label {
-  padding-bottom: 10px;
+  padding-bottom: 3px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.session-form-right Link {
-  padding-top: 10px;
+.session-form-right input {
+  width: 98%;
+  height: 30px;
+  font-family: 'Cardo', serif;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
 
-.exit-button {
-  position: absolute;
-  top: 10px;
-  left: 880px;
+button {
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background: #e33d26;
+  color: white;
+  font-family: 'Hind Siliguri', sans-serif;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #c83522;
+}
+
+.other-button {
+  background: white;
+  color: #e33d26;
+  width: 50px;
+}
+
+.or-break {
+  margin-top: 15px;
+  width: 260px;
+}
+
+.or-text {
+  font-family: 'Hind Siliguri', sans-serif;
+  background:white;
+  font-size: 14px;
+  transform:translateY(-16px);
+  width: 30px;
+  text-align:center;
+}
+
+.other-button:hover {
+  color: #c83522;
+  background: white;
+}
+
+.session-form-right ul {
+  padding-bottom: 3px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.username-input {
+  width: 300px;
 }

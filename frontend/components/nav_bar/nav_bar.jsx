@@ -11,12 +11,11 @@ class NavBar extends React.Component {
       <div className="nav-bar-right">
         <Link className="your-page" to="/">YOUR GROCERY LIST</Link>
         <Link className="your-page-box" to="/recipe-box">YOUR RECIPE BOX</Link>
-        <button onClick={this.props.logoutUser}>(log out)</button>
+        <Link className="your-page" to="/" onClick={this.props.logoutUser} >LOG OUT</Link>
       </div>
     ) : (
       <div className="nav-bar-right">
-        <Link className="button" to="/">Your Grocery List</Link>
-        <button onClick={() => this.props.openModal("login")}>Your Recipe Box (Login)</button>
+        <Link className="your-page-box" to="/" onClick={() => this.props.openModal("login")}>LOG IN</Link>
       </div>
     )
 

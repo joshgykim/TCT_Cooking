@@ -48,46 +48,48 @@ class Login extends React.Component {
     ) : null;
 
     const usernameInput = this.props.formType === "signup" ? (
-      <label>Username:
+      <div>
+      <label>Username</label>
         <input
+          className="username-input"
           type="text"
           value={this.state.username}
           onChange={ (e) => this.updateInput(e, "username") }
         />
-      </label>
+      </div>
     ) : null;
 
     const demoButton = this.props.formType === "login" ? (
-      <button onClick={ (e) => this.loginDemoUser(e) }>Demo Login</button>
+      <button onClick={ (e) => this.loginDemoUser(e) }>DEMO USER</button>
     ) : null;
 
     return (
       <div className="session-form-popup" onClick={e => e.stopPropagation()}>
           <div className="session-form-left">
+            <img src="https://cravedfw.files.wordpress.com/2014/02/souffle2.jpg?w=1000&h=750"/>
             <h2>Unlock California Times recipes and your personal recipe box with a free account.</h2>
           </div>
           <div className="session-form-right">
+            <h1>Enter your email address to log in or create an account.</h1>
             <form onSubmit={ (e) => this.handleSubmit(e) }>
 
               {usernameInput}
 
-              <label>Email: 
+              <label>Email Address</label>
                 <input
                   type="text"
                   value={this.state.email}
                   onChange={ (e) => this.updateInput(e, "email") }
                 />
-              </label>
 
-              <label>Password: 
+              <label>Password</label>
                 <input
                   type="password"
                   value={this.state.password}
                   onChange={ (e) => this.updateInput(e, "password") }
                 />
-              </label>
 
-              <button>{this.props.formType}</button>
+              <button>{this.props.formType.toUpperCase()}</button>
 
               {demoButton}
 
@@ -95,7 +97,8 @@ class Login extends React.Component {
 
             {sessionErrors}
 
-            <h2>----- or -----</h2>
+            <hr className="or-break"/>
+            <h2 className="or-text">or</h2>
 
             {this.props.otherForm}
           </div>

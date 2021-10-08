@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 
 class ROTD extends React.Component {
   constructor(props) {
@@ -8,6 +8,7 @@ class ROTD extends React.Component {
 
   render() {
     return (
+      <Link to="/recipes/1">
       <div className="rotd">
         <img className="rotd-image" src={this.props.recipe.image_url}/>
         <div className="rotd-label">
@@ -19,6 +20,7 @@ class ROTD extends React.Component {
           </div>
         </div>
       </div>
+      </Link>
     )
   }
 }

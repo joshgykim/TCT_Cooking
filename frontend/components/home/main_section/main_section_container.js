@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { getRecipes } from "../../../actions/recipe_actions";
 
 const mapStateToProps = (state) => ({
-  recipes: state.entities.recipes
+  recipes: state.entities.recipes,
+  currentUser: state.session.currentUser
 })
 
 const mapDispatchToProps = dispatch => ({

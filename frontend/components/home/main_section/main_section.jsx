@@ -2,9 +2,19 @@ import React from "react";
 import RecipeThumbnail from "../../recipe/recipe_thumbnail";
 
 class MainSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {currentUser: this.props.currentUser}
+  }
 
   componentDidMount() {
     this.props.getRecipes("Home")
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentUser !== this.props.currentUser) {
+      this.props.getRecipes("Home")
+    }
   }
 
   render() {
