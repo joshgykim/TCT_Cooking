@@ -15,6 +15,7 @@ class NavBar extends React.Component {
       </div>
     ) : (
       <div className="nav-bar-right">
+        <Link className="your-page-box" to="/recipe-box">YOUR RECIPE BOX</Link>
         <Link className="your-page-box" to="/" onClick={() => this.props.openModal("login")}>LOG IN</Link>
       </div>
     )

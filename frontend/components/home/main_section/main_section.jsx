@@ -55,6 +55,7 @@ class MainSection extends React.Component {
               />
             ))}
         </div>
+        <div className="page-bottom-margin"></div>
       </div>
     )
   }

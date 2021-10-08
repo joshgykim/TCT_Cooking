@@ -1,0 +1,78 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-us {
+  width: 960px;
+  transform:translateX(10px);
+  padding-top: 30px;
+}
+.about-us-text > h3 {
+  color: white;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.5;
+  padding-bottom: 30px;
+}
+
+.about-us-text > h3 > span {
+  color: white;
+  font-size: 18px;
+  font-family: 'Cardo', serif;
+}
+.about-us-text > h3 > span > a{
+  color: #e33d26;
+  text-decoration:underline;
+  font-family: 'Cardo', serif;
+
+}
+
+.footnote {
+  width: 960px;
+  transform:translateX(10px);
+  color: rgb(155, 155, 155);
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.josh-profile {
+  width: 960px;
+}
+
+.profile-description {
+  width: 550px;
+  transform:translateX(10px);
+}
+
+.profile-description > h1 {
+  color: #222222;
+  font-family: 'Cardo', serif;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.profile-description > span {
+  color: #5e5d5d;
+  font-family: 'Hind Siliguri', sans-serif;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.profile-description > span > span > a {
+  color: #e33d26;
+  text-decoration:underline;
+  font-family: 'Hind Siliguri', sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+}

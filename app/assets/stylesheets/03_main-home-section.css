@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 2000px;
   background: rgba(242,243,239,255)
 }
 
@@ -173,12 +172,12 @@
 }
 
 .profile {
-  height: 250px;
+  height: 130px;
   background: #e6e7e2
 }
 
 .about {
-  height: 400px;
+  height: 250px;
   background: #000000;
 }
 
@@ -195,6 +194,10 @@
   font-size: 12px;
   font-family: 'Hind Siliguri', sans-serif;
   font-weight: 600;
+}
+
+.page-bottom-margin {
+  height: 100px;
 }
 
 .seeder {
