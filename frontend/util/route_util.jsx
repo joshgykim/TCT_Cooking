@@ -30,7 +30,7 @@ const Auth = ({ loggedIn , path, component: Component }) => (
 //   />
 // );
 
-const Protected = ({ loggedIn, path, component: Component, openModal }) => {
+const Protected = ({ loggedIn, path, component: Component, openModal, unprotectedComp: UnprotectedComp }) => {
   return (<Route
     path={path}
     render={props => {
@@ -38,7 +38,7 @@ const Protected = ({ loggedIn, path, component: Component, openModal }) => {
         return <Component {...props} />
       } else {
         openModal("login")
-        return <Redirect to="/"/>
+        return <UnprotectedComp {...props}/>
       }
     }}
   />)

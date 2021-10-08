@@ -60,7 +60,7 @@ class Login extends React.Component {
     ) : null;
 
     const demoButton = this.props.formType === "login" ? (
-      <button onClick={ (e) => this.loginDemoUser(e) }>DEMO USER</button>
+      <button className="session-button" onClick={ (e) => this.loginDemoUser(e) }>DEMO USER</button>
     ) : null;
 
     return (
@@ -89,7 +89,7 @@ class Login extends React.Component {
                   onChange={ (e) => this.updateInput(e, "password") }
                 />
 
-              <button>{this.props.formType.toUpperCase()}</button>
+              <button className="session-button">{this.props.formType.toUpperCase()}</button>
 
               {demoButton}
 
