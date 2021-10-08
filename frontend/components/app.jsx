@@ -18,9 +18,9 @@ export default () => (
     <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/recipe-box" component={RecipeBoxContainer}/>
-      <ProtectedRoute exact path="/recipes/:recipeId" component={RecipeContainer} unprotectedComp={Home}/>
-      <ProtectedRoute exact path="/authors/:authorId" component={AuthorContainer} unprotectedComp={Home}/>
-      <ProtectedRoute exact path="/categories/:categoryId" component={CategoryContainer} unprotectedComp={Home}/>
+      <ProtectedRoute exact path="/recipes/:recipeId" component={RecipeContainer}/>
+      <ProtectedRoute exact path="/authors/:authorId" component={AuthorContainer}/>
+      <ProtectedRoute exact path="/categories/:categoryId" component={CategoryContainer}/>
       {/* <Route exact path="/create-recipe" component={RecipeCreator}/> */}
       <Route component={NotFound}/>
     </Switch>
