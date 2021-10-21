@@ -37,12 +37,12 @@ class SaveButton extends React.Component {
     if (this.props.isRecipePage) {
       button = (this.state.saved) ? (
         <button className="button-recipe-page" onClick={ (e) => this.unsaveRecipe(e) } >
-          <img className="button-image-recipe-page" src="https://cdn-icons.flaticon.com/png/512/3082/premium/3082351.png?token=exp=1634776154~hmac=b7131a30047b7477e66937b477139264"/>
+          <img className="button-image-recipe-page" src={window.saved}/>
           &nbsp;Saved&nbsp;
         </button>
       ) : (
         <button className="button-recipe-page" onClick={ (e) => this.saveRecipe(e) } >
-          <img className="button-image-recipe-page" src="https://cdn-icons.flaticon.com/png/512/3082/premium/3082331.png?token=exp=1634776136~hmac=0387cd6d7b3d9921bd7f5c966124a6bc"/>
+          <img className="button-image-recipe-page" src={window.unsaved}/>
           &nbsp;Save to Recipe Box&nbsp;
         </button>
       )
@@ -50,13 +50,13 @@ class SaveButton extends React.Component {
       button = (this.state.saved) ? (
         <img 
           className="saved-button"
-          src="https://cdn-icons.flaticon.com/png/512/3082/premium/3082351.png?token=exp=1634776154~hmac=b7131a30047b7477e66937b477139264"
+          src={window.saved}
           onClick={ (e) => this.unsaveRecipe(e)}
           />
           ) : (
             <img 
           className="unsaved-button" 
-          src="https://cdn-icons.flaticon.com/png/512/3082/premium/3082331.png?token=exp=1634776136~hmac=0387cd6d7b3d9921bd7f5c966124a6bc"
+          src={window.unsaved}
           onClick={ (e) => this.saveRecipe(e)}
         />
       )
