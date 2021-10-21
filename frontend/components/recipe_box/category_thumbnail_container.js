@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import CategoryThumbnail from "./category_thumbnail";
 
 function findCategoryImage(state, recipeArr) {
-  if (recipeArr !== undefined) {
+  if (recipeArr !== undefined && state.entities.recipes[recipeArr[0]] !== undefined) {
     return state.entities.recipes[recipeArr[0]].image_url
   }
 }

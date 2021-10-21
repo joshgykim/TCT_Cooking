@@ -9,7 +9,7 @@
 }
 
 .rotd-image {
-  width: 100vw;
+  width: 100%;
   height: 800px;
   object-fit: cover;
   object-position:bottom;

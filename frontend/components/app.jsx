@@ -23,7 +23,6 @@ export default () => (
       <ProtectedRoute exact path="/authors/:authorId" component={AuthorContainer}/>
       <ProtectedRoute exact path="/categories/:categoryId" component={CategoryContainer}/>
       <ProtectedRoute exact path="/collections/:collectionId" component={CollectionContainer}/>
-      {/* <Route exact path="/create-recipe" component={RecipeCreator}/> */}
       <Route component={NotFound}/>
     </Switch>
     <div className="profile">

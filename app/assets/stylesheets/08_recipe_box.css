@@ -31,9 +31,15 @@
 .recipebox-category-index {
   width: 227px;
   height: 100vh;
+  position: fixed;
   background: white;
   overflow:scroll;
   font-family: 'Hind Siliguri', sans-serif;
+}
+
+.category-index-filler {
+  width: 227px;
+  height: 100vh;
 }
 
 .recipebox-saved-recipe {

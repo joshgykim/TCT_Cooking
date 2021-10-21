@@ -25,6 +25,7 @@ class RecipeBox extends React.Component {
           categories={this.props.categories}
           recipeNum={Object.keys(this.props.recipes).length}
         />
+        <div className="category-index-filler"/>
         <SavedRecipeIndex 
           recipes={this.props.recipes}
           filter={this.state.filter}
