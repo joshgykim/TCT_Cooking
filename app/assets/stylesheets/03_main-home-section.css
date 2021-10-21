@@ -63,7 +63,7 @@
   width: 464px;
   background: white;
   border: 1px solid rgb(223, 223, 223);
-  height: 400px;
+  height: 430px;
   overflow: hidden;
 }
 
@@ -90,6 +90,23 @@
   padding: 15px 0px;
   width: 100%;
   background: white;
+}
+
+.collection-button {
+  border: none;
+  color: white;
+  background: #e33d26;
+  display:flex;
+  align-items: center;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 4px;
+  width: 180px;
+  margin: auto;
+}
+
+.collection-button:hover {
+  background: #c43420;
 }
 
 .recipe-thumbnail {

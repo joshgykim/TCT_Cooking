@@ -6,7 +6,6 @@ class SaveButton extends React.Component {
     this.state = { saved: this.props.saved }
     this.saveRecipe = this.saveRecipe.bind(this);
     this.unsaveRecipe = this.unsaveRecipe.bind(this);
-
   }
 
   saveRecipe(e) {

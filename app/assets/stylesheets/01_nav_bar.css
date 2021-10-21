@@ -11,6 +11,12 @@
   position: fixed;
   z-index: 1;
   width: 100%;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar > div {
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-bar-right {
@@ -29,6 +35,26 @@
   justify-content: center;
   padding-left: 15px;
   padding-right: 30px;
+}
+
+.search-bar {
+  height: 63px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-bar > span {
+  margin-left: 20px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 20px;
+  color: #777777;
+}
+
+.search-image {
+  margin-left: 20px;
+  height: 40%;
+  opacity: 0.4;
 }
 
 .logo {

@@ -5,6 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="The California Times Cooking" />
+    <meta property='og:image' content="<%= image_url('tct-preview.gif') %>"/>
+    <meta property="og:description"
+      content="An online cookbook platform where users can discover, save and organize recipes"
+    />
+
+    <meta property="og:url"
+      content="https://tct-cooking-app.herokuapp.com/"
+    />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <% if current_user %>

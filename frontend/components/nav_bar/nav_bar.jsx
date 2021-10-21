@@ -23,10 +23,16 @@ class NavBar extends React.Component {
     return (
       <div>
         <header className="nav-bar">
-          <div className="nav-bar-left">
-            <Link className="logo" to="/">Cali
-              <img className="logo-image" src="https://mwcm.nyt.com/dam/jcr:c46c3399-24e9-47ea-b327-4694aeaf8910/cooking.png"/>
-            </Link>
+          <div>
+            <div className="nav-bar-left">
+              <Link className="logo" to="/">Cali
+                <img className="logo-image" src="https://mwcm.nyt.com/dam/jcr:c46c3399-24e9-47ea-b327-4694aeaf8910/cooking.png"/>
+              </Link>
+            </div>
+            <div className="search-bar">
+              <img className="search-image" src="https://cdn-icons-png.flaticon.com/512/149/149852.png"/>
+              <span>What would you like to cook?</span>
+            </div>
           </div>
           {navBarRight}
         </header>
