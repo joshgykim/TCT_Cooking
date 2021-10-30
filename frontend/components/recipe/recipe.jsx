@@ -7,6 +7,11 @@ import SaveButtonContainer from "./save_button_container";
 class Recipe extends React.Component { 
   constructor(props) {
     super(props);
+    this.saveIngredients = this.saveIngredients.bind(this);
+  }
+
+  saveIngredients() {
+    this.props.saveIngredients(this.props.recipe.id);
   }
 
   componentDidMount() {
@@ -74,6 +79,11 @@ class Recipe extends React.Component {
             ))
           }
         </ul>
+        <button
+          className="save-ingredients"
+          onClick={this.saveIngredients}>
+          Save Ingredients
+        </button>
       </div>
     )
 

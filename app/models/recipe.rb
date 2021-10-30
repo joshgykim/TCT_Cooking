@@ -100,5 +100,14 @@ class Recipe < ApplicationRecord
   has_many :collections,
     through: :collectings,
     source: :collection
+
+  has_many :shoppings,
+    primary_key: :id,
+    foreign_key: :recipe_id,
+    class_name: "Shopping"
   
+  has_many :buying_users,
+    through: :shoppings,
+    source: :user
+
 end

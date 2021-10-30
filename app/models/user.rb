@@ -75,4 +75,13 @@ class User < ApplicationRecord
     through: :saved_recipes,
     source: :categories
 
+  has_many :shoppings,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "Shopping"
+  
+  has_many :recipes_to_shop,
+    through: :shoppings,
+    source: :recipe
+
 end

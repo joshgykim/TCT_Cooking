@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: collections
+#
+#  id          :bigint           not null, primary key
+#  description :text             not null
+#  name        :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 class Collection < ApplicationRecord
   validates_presence_of :name, :description
 

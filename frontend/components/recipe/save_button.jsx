@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 class SaveButton extends React.Component {
   constructor(props) {
@@ -9,9 +10,14 @@ class SaveButton extends React.Component {
   }
 
   saveRecipe(e) {
-    console.log("saving")
     e.preventDefault();
     e.stopPropagation();
+
+    if (!this.props.currentUser) {
+      this.props.openModal("login");
+      return;
+    }
+
     this.setState({ saved: !this.state.saved });
     this.props.saveRecipe({ 
       user_id: this.props.currentUser.id,
@@ -20,7 +26,6 @@ class SaveButton extends React.Component {
   }
 
   unsaveRecipe(e) {
-    console.log("unsaving")
     e.preventDefault();
     e.stopPropagation();
     this.setState({ saved: !this.state.saved });

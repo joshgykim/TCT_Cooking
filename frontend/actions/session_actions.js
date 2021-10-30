@@ -29,13 +29,13 @@ export const resetSessionErrors = () => ({
 
 export const createNewUser = formUser => dispatch => postUser(formUser)
   .then(
-    user => dispatch(receiveCurrentUser(user)),
+    payload => dispatch(receiveCurrentUser(payload)),
     errors => dispatch(receiveErrors(errors.responseJSON))
     );
 
 export const loginUser = formUser => dispatch => postSession(formUser)
   .then(
-    user => dispatch(receiveCurrentUser(user)),
+    payload => dispatch(receiveCurrentUser(payload)),
     error => dispatch(receiveErrors(error.responseJSON))
     );
 

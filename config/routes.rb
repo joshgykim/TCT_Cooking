@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:show]
     resources :recipe_boxes, only: [:create, :destroy]
     resources :collections, only: [:show]
+    resources :shoppings, only: [:show, :create, :destroy]
 
     resources :ingredients, only: [:create]
   end

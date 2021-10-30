@@ -5,6 +5,7 @@ import ingredientsReducer from "./entities/ingredients_reducer";
 import commentsReducer from "./entities/comments_reducer";
 import authorsReducer from "./entities/authors_reducer";
 import collectionsReducer from "./entities/collections_reducer";
+import shoppingsReducer from "./entities/shoppings_reducer";
 
 const entitiesReducer = combineReducers({
   recipes: recipesReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
   ingredients: ingredientsReducer,
   comments: commentsReducer,
   author: authorsReducer,
-  collections: collectionsReducer
+  collections: collectionsReducer,
+  shoppings: shoppingsReducer
 })
 
 export default entitiesReducer;

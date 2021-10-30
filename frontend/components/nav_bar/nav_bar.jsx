@@ -9,7 +9,7 @@ class NavBar extends React.Component {
   render() {
     const navBarRight = this.props.currentUser? (
       <div className="nav-bar-right">
-        <Link className="your-page" to="/">YOUR GROCERY LIST</Link>
+        <button className="your-page" onClick={() => this.props.openModal("shopping")}>YOUR GROCERY LIST</button>
         <Link className="your-page-box" to="/recipe-box">YOUR RECIPE BOX</Link>
         <Link className="your-page" to="/" onClick={this.props.logoutUser} >LOG OUT</Link>
       </div>
