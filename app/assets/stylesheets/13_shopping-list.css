@@ -1,0 +1,70 @@
+.shopping-recipe-popup {
+  width: 650px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  overflow:auto;
+  background: #f2f3ef;
+}
+
+.shopping-recipe-heading {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #474747;
+  border-radius: 7px 0px 0px 0px;
+  padding: 30px;
+}
+
+.shopping-recipe-heading > span {
+  padding: 0px 5px;
+  color: #252525;
+}
+
+.shopping-recipe-heading-number {
+  color: #888888;
+  font-weight: 300;
+}
+
+.shopping-recipe > h1 {
+  color: #252525;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 35px;
+}
+
+.shopping-recipe > h2 {
+  color: #777777;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0px 35px;
+  padding-bottom: 20px;
+}
+
+.shopping-recipe > ul {
+  padding: 0px;
+  background: white;
+  padding: 0px 35px;
+}
+
+.shopping-recipe > ul > div > li {
+  padding: 0px;
+  background: white;
+  padding: 20px 0px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.ingredient-divider {
+  margin: 0px;
+  border: none;
+  border-top: 0.5px solid #c3c3c3;
+}

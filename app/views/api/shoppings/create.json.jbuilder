@@ -1,5 +1,5 @@
 json.set! @shopping.recipe.id do
-  json.extract! @shopping.recipe, :id, :title
+  json.extract! @shopping.recipe, :id, :title, :yield
 
   json.ingredients do
     @shopping.recipe.ingredients.each do |ingredient|
