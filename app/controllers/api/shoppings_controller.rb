@@ -1,7 +1,7 @@
 class Api::ShoppingsController < ApplicationController
 
   def show
-    @user = User.find_by(id: params[:id])
+    @shoppings = Shopping.where(user_id: params[:id])
     render :show
   end
 
@@ -12,4 +12,15 @@ class Api::ShoppingsController < ApplicationController
     end
   end
 
+  def destroy
+    @shopping = Shopping.find_by user_id: current_user.id, recipe_id: params[:id]
+    @shopping.destroy
+    render :destroy
+  end
+
+  def update
+    @shopping = Shopping.find_by user_id: current_user.id, recipe_id: params[:data][:recipeId]
+    @shopping.update(omitted: @shopping.omitted ? @shopping.omitted + "#{params[:data][:ingredientId]} " : "#{params[:data][:ingredientId]} ")
+    render :update
+  end
 end

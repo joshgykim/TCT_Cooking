@@ -1,10 +1,13 @@
 import {
   fetchShoppings,
-  postShopping
+  postShopping,
+  destroyShopping,
+  patchShopping
 } from "../util/shopping_util";
 
 export const RECEIVE_SHOPPINGS = "RECEIVE_SHOPPINGS";
 export const RECEIVE_SHOPPING = "RECEIVE_SHOPPING";
+export const REMOVE_SHOPPING = "REMOVE_SHOPPING";
 
 const receiveShoppings = payload => {
   return {
@@ -18,8 +21,19 @@ const receiveShopping = payload => ({
   shopping: payload
 })
 
+const deleteShopping = payload => ({
+  type: REMOVE_SHOPPING,
+  shopping: payload
+})
+
 export const getShoppings = userId => dispatch => fetchShoppings(userId)
   .then( payload => dispatch(receiveShoppings(payload)))
 
 export const saveIngredients = recipeId => dispatch => postShopping(recipeId)
+  .then( payload => dispatch(receiveShopping(payload)))
+
+export const removeShopping = recipeId => dispatch => destroyShopping(recipeId)
+  .then( payload => dispatch(deleteShopping(payload)))
+
+export const removeIngredient = data => dispatch => patchShopping(data)
   .then( payload => dispatch(receiveShopping(payload)))

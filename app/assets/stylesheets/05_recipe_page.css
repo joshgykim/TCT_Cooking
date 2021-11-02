@@ -205,3 +205,52 @@
 .button-recipe-page:hover {
   background: #c43420;
 }
+
+.saved-ingredients {
+  margin: 20px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.saved-ingredients > h3 {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 15px;
+}
+
+.saved-ingredients > button {
+  border: none;
+  color: #e33d26;
+  font-size: 15px;
+  text-decoration: none;
+  margin-right: 18px;
+  background: none;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+}
+
+.saved-ingredients > button:hover {
+  color: #ac2e1e;
+}
+
+.save-ingredients {
+  margin: 20px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.save-ingredients > button {
+  border: 1px solid #b7b7b7;
+  border-radius: 15px;
+  height: 30px;
+  background: none;
+  color: #666666;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.save-ingredients > button:hover {
+  background: #f1f1f1
+}

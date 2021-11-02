@@ -11,3 +11,18 @@ export const postShopping = recipeId => (
     data: { recipeId }
   })
 )
+
+export const destroyShopping = recipeId => (
+  $.ajax({
+    url: `/api/shoppings/${recipeId}`,
+    method: "delete"
+  })
+)
+
+export const patchShopping = data => (
+  $.ajax({
+    url: `/api/shoppings/${data.recipeId}`,
+    method: "patch",
+    data: { data }
+  })
+)

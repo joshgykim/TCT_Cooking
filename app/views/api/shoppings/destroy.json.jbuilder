@@ -1,0 +1,1 @@
+json.extract! @shopping.recipe, :id

@@ -10,6 +10,7 @@
   border-radius: 7px;
   overflow:auto;
   background: #f2f3ef;
+  padding: 6px 0px;
 }
 
 .shopping-recipe-heading {
@@ -29,6 +30,10 @@
 .shopping-recipe-heading-number {
   color: #888888;
   font-weight: 300;
+}
+
+.shopping-recipe {
+  position: relative;
 }
 
 .shopping-recipe > h1 {
@@ -67,4 +72,32 @@
   margin: 0px;
   border: none;
   border-top: 0.5px solid #c3c3c3;
+}
+
+.shopping-recipe-delete {
+  position: absolute;
+  background: none;
+  border: none;
+  text-decoration:underline;
+  left: 85%;
+  top: 10px;
+  font-family: 'Hind Siliguri', sans-serif;
+  color: #777777;
+  cursor: pointer;
+}
+
+.shopping-ingredient-list {
+  position: relative;
+}
+
+.remove-ingredient {
+  position: absolute;
+  left: 92%;
+  bottom: 15px;
+  background: none;
+  border: none;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 14px;
+  color: #777777;
+  cursor: pointer;
 }

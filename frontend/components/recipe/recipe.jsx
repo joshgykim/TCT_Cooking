@@ -79,11 +79,20 @@ class Recipe extends React.Component {
             ))
           }
         </ul>
-        <button
-          className="save-ingredients"
-          onClick={this.saveIngredients}>
-          Save Ingredients
-        </button>
+        { this.props.shoppingList[this.props.recipe.id] ? <div className="saved-ingredients">
+          <h3>Added &nbsp;|&nbsp;&nbsp;</h3>
+          <button 
+            className="saved_ingredient-modal"
+            onClick={() => this.props.openModal("shopping")}>
+            Open Shopping List
+          </button>
+        </div> :
+        <div className="save-ingredients">
+          <button
+            onClick={this.saveIngredients}>
+            &nbsp;&nbsp;Add to Your Shopping List&nbsp;&nbsp;
+          </button>
+        </div>}
       </div>
     )
 
