@@ -25,7 +25,7 @@ class Recipe extends React.Component {
   }
 
   render() {
-    if (this.props.recipe.preparations === undefined) return (<div className="recipe"></div>)
+    if (!this.props.recipe || this.props.recipe.preparations === undefined) return (<div className="recipe"></div>)
 
     const categoryLinks = (
       <div className="recipe-categories">

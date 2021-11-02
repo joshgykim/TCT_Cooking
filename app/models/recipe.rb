@@ -32,6 +32,13 @@ class Recipe < ApplicationRecord
     end
   end
 
+  def self.searchFor(searchStr)
+    return self
+      .where("title ILIKE ?", "%#{searchStr}%")
+      .order(Arel.sql("title ILIKE '#{searchStr}%' DESC, title"))
+      .limit(5)
+  end
+
   def self.category_count(user_id, category_id)
     self.joins(:savers)
         .joins(:categories)

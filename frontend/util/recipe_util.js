@@ -26,3 +26,10 @@ export const postIngredient = ingredient => (
     data: { ingredient }
   })
 )
+
+export const searchRecipes = searchString => (
+  $.ajax({
+    url: "/api/recipes",
+    data: { mode: "Search", searchFor: searchString }
+  })
+)

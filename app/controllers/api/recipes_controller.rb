@@ -1,9 +1,15 @@
 class Api::RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.selectRecipes(params[:mode])
-    @collections = Collection.selectCollections(params[:mode])
-    render :index
+    if params[:mode] == "Search"
+      @recipes = Recipe.searchFor(params[:searchFor])
+      @collections = Collection.searchFor(params[:searchFor])
+      render :search
+    else 
+      @recipes = Recipe.selectRecipes(params[:mode])
+      @collections = Collection.selectCollections(params[:mode])
+      render :index 
+    end
   end
 
   def show

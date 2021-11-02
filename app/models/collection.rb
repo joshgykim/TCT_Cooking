@@ -26,4 +26,11 @@ class Collection < ApplicationRecord
     end
   end
 
+  def self.searchFor(searchStr)
+    return self
+      .where("name ILIKE ?", "%#{searchStr}%")
+      .order(Arel.sql("name ILIKE '#{searchStr}%' DESC"))
+      .limit(3)
+  end
+
 end
