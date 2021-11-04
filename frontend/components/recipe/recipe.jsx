@@ -39,9 +39,9 @@ class Recipe extends React.Component {
         <div className="rating-form-user">
           <label>
             {this.props.recipe.rating.userRating < 1 ? (
-              <i className="far fa-star"></i>
+              <span>☆</span>
             ) : (
-              <i className="fas fa-star"></i>
+              <span>★</span>
             )}
             <input
               type="radio"
@@ -51,9 +51,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {this.props.recipe.rating.userRating < 2 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -63,9 +63,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {this.props.recipe.rating.userRating < 3 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -75,9 +75,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {this.props.recipe.rating.userRating < 4 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -87,9 +87,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {this.props.recipe.rating.userRating < 5 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -105,9 +105,9 @@ class Recipe extends React.Component {
         <div className="rating-form">
           <label>
             {averageRating < 1 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -117,9 +117,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {averageRating < 2 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -129,9 +129,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {averageRating < 3 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -141,9 +141,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {averageRating < 4 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"
@@ -153,9 +153,9 @@ class Recipe extends React.Component {
           </label>
           <label>
             {averageRating < 5 ? (
-              <i className="far fa-star"></i>
-            ) : (
-              <i className="fas fa-star"></i>
+              <span>☆</span>
+              ) : (
+                <span>★</span>
             )}
             <input
               type="radio"

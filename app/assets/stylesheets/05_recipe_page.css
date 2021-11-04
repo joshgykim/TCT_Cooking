@@ -270,12 +270,12 @@
   display: none;
 }
 
-.rating-form i {
-  font-size: 18px;
+.rating-form span {
+  font-size: 23px;
   color: #e33d26;
 }
 
-.rating-form i:hover {
+.rating-form span:hover {
   color: #fcb545;
 }
 
@@ -288,11 +288,11 @@
   display: none;
 }
 
-.rating-form-user i {
-  font-size: 18px;
+.rating-form-user span {
+  font-size: 23px;
   color: #fcb545;
 }
 
-.rating-form-user i:hover {
-  color: #fcb545;
+.rating-form-user span:hover {
+  color: #f39225;
 }
