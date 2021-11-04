@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bevan&family=Galada&family=Hind+Siliguri:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
 
 .recipe {
@@ -62,6 +62,7 @@
   flex-direction: row;
   padding-top: 20px;
   font-family: 'Cardo', serif;
+  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -80,6 +81,12 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 15px 0px;
+}
+
+.recipe-cat-rat > span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .recipe-categories {
@@ -253,4 +260,39 @@
 
 .save-ingredients > button:hover {
   background: #f1f1f1
+}
+
+.rating-form label {
+  transition: color 0.25s;
+}
+
+.rating-form input {
+  display: none;
+}
+
+.rating-form i {
+  font-size: 18px;
+  color: #e33d26;
+}
+
+.rating-form i:hover {
+  color: #fcb545;
+}
+
+
+.rating-form-user label {
+  transition: color 0.25s;
+}
+
+.rating-form-user input {
+  display: none;
+}
+
+.rating-form-user i {
+  font-size: 18px;
+  color: #fcb545;
+}
+
+.rating-form-user i:hover {
+  color: #fcb545;
 }

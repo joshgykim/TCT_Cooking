@@ -12,6 +12,11 @@ json.recipe do
     json.name @recipe.author.name
   end
   json.saved !@recipe.savers.where(id: current_user.id).empty?
+  json.rating do
+    json.userRating @recipe.ratings.find_by(user_id: current_user.id) ? @recipe.ratings.find_by(user_id: current_user.id).rating : 0
+    json.average @recipe.ratings.average(:rating) ? @recipe.ratings.average(:rating) : 0
+    json.totalNum @recipe.ratings.length
+  end
 end
 
 json.categories do

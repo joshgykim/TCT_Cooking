@@ -1,6 +1,7 @@
 import {
   fetchRecipe,
-  fetchRecipes
+  fetchRecipes,
+  postRating
 } from "../util/recipe_util";
 
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
@@ -25,3 +26,6 @@ export const getRecipeData = (recipeId) => dispatch => fetchRecipe(recipeId)
 
 export const getRecipes = (mode) => dispatch => fetchRecipes(mode)
   .then( recipesData => dispatch(receiveRecipes(recipesData)) )
+
+export const rateRecipe = (ratingData) => dispatch => postRating(ratingData)
+  .then( recipeData => dispatch(receiveRecipe(recipeData)) )

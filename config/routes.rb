@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :update, :destroy]
     resources :authors, only: [:show]
     resources :categories, only: [:show]
+    resources :ratings, only: [:create]
     resources :recipe_boxes, only: [:create, :destroy]
     resources :collections, only: [:show]
     resources :shoppings, only: [:show, :create, :destroy, :update]

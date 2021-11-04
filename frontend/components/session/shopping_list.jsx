@@ -45,8 +45,8 @@ class ShoppingList extends React.Component {
                   {
                     Object.values(recipe.ingredients).map( (ingredientObj, i) => {
                       return (
-                        <div className="shopping-ingredient-list">
-                          <li key={(j+1) * i}>
+                        <div className="shopping-ingredient-list" key={(j+1) * i}>
+                          <li>
                             {ingredientObj.quantity}
                             {ingredientObj.quantity ? " " : ""}
                             {ingredientObj.unit}

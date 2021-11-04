@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Recipe from "./recipe";
-import { getRecipeData } from "../../actions/recipe_actions";
+import { getRecipeData, rateRecipe } from "../../actions/recipe_actions";
 import { openModal } from '../../actions/modal_actions';
 import { saveIngredients } from "../../actions/shopping_actions";
 
@@ -10,13 +10,14 @@ const mapStateToProps = (state, ownProps) => ({
   categories: state.entities.categories,
   ingredients: state.entities.ingredients,
   comments: state.entities.comments ? state.entities.comments : {},
-  shoppingList: state.entities.shoppings
+  shoppingList: state.entities.shoppings,
 })
 
 const mapDispatchToProps = (dispatch) => ({
   getRecipeData: (recipeId) => dispatch(getRecipeData(recipeId)),
   saveIngredients: (recipeId) => dispatch(saveIngredients(recipeId)),
   openModal: (formType) => dispatch(openModal(formType)),
+  rateRecipe: (ratingData) => dispatch(rateRecipe(ratingData))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

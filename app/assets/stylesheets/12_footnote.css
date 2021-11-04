@@ -21,12 +21,13 @@
   color: white;
   font-size: 18px;
   font-family: 'Cardo', serif;
+  font-weight: 400;
 }
 .about-us-text > h3 > span > a{
   color: #e33d26;
   text-decoration:underline;
   font-family: 'Cardo', serif;
-
+  font-weight: 400;
 }
 
 .footnote {
@@ -58,6 +59,7 @@
   font-family: 'Cardo', serif;
   padding-top: 30px;
   padding-bottom: 10px;
+  font-weight: 400;
 }
 
 .profile-description > span {

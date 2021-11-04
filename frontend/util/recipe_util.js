@@ -33,3 +33,11 @@ export const searchRecipes = searchString => (
     data: { mode: "Search", searchFor: searchString }
   })
 )
+
+export const postRating = ratingData => (
+  $.ajax({
+    url: "/api/ratings",
+    method: "post",
+    data: { ratingData }
+  })
+)

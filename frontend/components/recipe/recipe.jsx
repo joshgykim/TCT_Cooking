@@ -7,11 +7,20 @@ import SaveButtonContainer from "./save_button_container";
 class Recipe extends React.Component { 
   constructor(props) {
     super(props);
+    this.state = { rating: 0 }
     this.saveIngredients = this.saveIngredients.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   saveIngredients() {
     this.props.saveIngredients(this.props.recipe.id);
+  }
+
+  handleClick(star) {
+    return (e) => {
+      console.log("clicked");
+      this.props.rateRecipe({recipeId: this.props.recipe.id, rating: star})
+    }
   }
 
   componentDidMount() {
@@ -21,6 +30,141 @@ class Recipe extends React.Component {
   componentDidUpdate(prevProp) {
     if (this.props.match.params.recipeId !== prevProp.match.params.recipeId) {
         this.props.getRecipeData(this.props.match.params.recipeId);
+    }
+  }
+
+  starRatings() {
+    if (this.props.recipe.rating.userRating !== 0) {
+      return (
+        <div className="rating-form-user">
+          <label>
+            {this.props.recipe.rating.userRating < 1 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="one-star"
+              onClick={this.handleClick(1)}
+            />
+          </label>
+          <label>
+            {this.props.recipe.rating.userRating < 2 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="two-stars"
+              onClick={this.handleClick(2)}
+            />
+          </label>
+          <label>
+            {this.props.recipe.rating.userRating < 3 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="three-stars"
+              onClick={this.handleClick(3)}
+            />
+          </label>
+          <label>
+            {this.props.recipe.rating.userRating < 4 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="four-stars"
+              onClick={this.handleClick(4)}
+            />
+          </label>
+          <label>
+            {this.props.recipe.rating.userRating < 5 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="five-stars"
+              onClick={this.handleClick(5)}
+            />
+          </label>
+        </div>
+      )
+    } else {
+      let averageRating = Math.floor(parseFloat(this.props.recipe.rating.average));
+      return(
+        <div className="rating-form">
+          <label>
+            {averageRating < 1 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="one-star"
+              onClick={this.handleClick(1)}
+            />
+          </label>
+          <label>
+            {averageRating < 2 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="two-stars"
+              onClick={this.handleClick(2)}
+            />
+          </label>
+          <label>
+            {averageRating < 3 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="three-stars"
+              onClick={this.handleClick(3)}
+            />
+          </label>
+          <label>
+            {averageRating < 4 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="four-stars"
+              onClick={this.handleClick(4)}
+            />
+          </label>
+          <label>
+            {averageRating < 5 ? (
+              <i className="far fa-star"></i>
+            ) : (
+              <i className="fas fa-star"></i>
+            )}
+            <input
+              type="radio"
+              value="five-stars"
+              onClick={this.handleClick(5)}
+            />
+          </label>
+        </div>
+      )
     }
   }
 
@@ -129,7 +273,7 @@ class Recipe extends React.Component {
             {categoryLinks}
           </span>
           <div className="recipe-ratings">
-            (RATINGS GO HERE)
+            {this.starRatings()}
           </div>
         </div>
         <hr/>
