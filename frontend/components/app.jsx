@@ -32,7 +32,18 @@ export default () => (
           <span>At the time of this website's creation, Josh was student studying fullstack development at&nbsp;<span><a href="https://www.appacademy.io" >App Academy</a></span>. He has a background in Architecture, design and software engineering.</span>
         </div>
         <div className="profile-icons">
-
+          <span className="follow-me">Follow Me</span>
+          <div>
+            <a href="https://github.com/joshgykim" target="_blank">
+              <img className="icons-png" src={window.github}/>
+            </a>
+            <a href="https://www.linkedin.com/in/josh-kimbiggs/" target="_blank">
+              <img className="icons-png" src={window.linkedin}/>
+            </a>
+            <a href="https://www.joshkb.com" target="_blank">
+              <img className="icons-png" src={window.website}/>
+            </a>
+          </div>
         </div>
       </div>
     </div>

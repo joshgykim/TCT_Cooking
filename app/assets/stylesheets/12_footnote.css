@@ -47,6 +47,30 @@
 
 .josh-profile {
   width: 960px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.profile-icons {
+  transform: translateY(15px);
+}
+
+.profile-icons > span {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 15px;
+  color: #222222;
+}
+
+.profile-icons > div {
+  display: flex;
+  width: 160px;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.icons-png {
+  width: 40px;
 }
 
 .profile-description {

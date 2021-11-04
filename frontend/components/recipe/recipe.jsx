@@ -18,7 +18,6 @@ class Recipe extends React.Component {
 
   handleClick(star) {
     return (e) => {
-      console.log("clicked");
       this.props.rateRecipe({recipeId: this.props.recipe.id, rating: star})
     }
   }
