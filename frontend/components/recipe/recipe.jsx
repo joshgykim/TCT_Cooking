@@ -273,6 +273,15 @@ class Recipe extends React.Component {
             {categoryLinks}
           </span>
           <div className="recipe-ratings">
+            <div className="avg-review">
+              <span className="average-star">★</span>
+              <span className="average-reviews">
+                {Math.round(parseFloat(this.props.recipe.rating.average)*10)/10}
+              </span>
+              <span className="total-reviews">
+                ({this.props.recipe.rating.totalNum}{this.props.recipe.rating.totalNum > 1 ? " reviews" : " review"})
+              </span>
+            </div>
             {this.starRatings()}
           </div>
         </div>

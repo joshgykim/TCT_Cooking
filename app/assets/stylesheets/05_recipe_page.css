@@ -296,3 +296,28 @@
 .rating-form-user span:hover {
   color: #f39225;
 }
+
+.recipe-ratings {
+  display: flex;
+  align-items: center;
+}
+
+.avg-review {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.avg-review > span {
+  color: #e33d26;
+  font-family: 'Hind Siliguri', sans-serif;
+  padding: 0px 2px;
+  font-weight: 600;
+}
+
+.avg-review > span.total-reviews {
+  color: #747474;
+  padding: 0px 4px;
+  font-size: 12px;
+  font-weight: 400;
+}
