@@ -2,7 +2,9 @@
 
 [The California Times Cooking](https://tct-cooking-app.herokuapp.com/) is a clone of [The New York Times Cooking](https://cooking.nytimes.com), a digital cookbook platform and cooking guide alike, that helps home cooks discover, save and organize recipes written by its editors. Users can also rate and comment while browsing recipes or curated collections of recipes.
 
-<img src="https://user-images.githubusercontent.com/22581304/140561682-2091fd48-3693-4bed-a803-99558ea00783.gif" width="85%">
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/22581304/140561682-2091fd48-3693-4bed-a803-99558ea00783.gif" width="80%" >
+</p>
 
 ## Technologies
 
