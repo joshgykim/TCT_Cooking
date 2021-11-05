@@ -13,7 +13,7 @@ class CollectionThumbnail extends React.Component {
         <Link to={`/collections/${this.props.collectionId}`}>
           <img className="collection-thumbnail-image" src={this.props.collection.image_url} />
           <h1>{this.props.collection.name}</h1>
-          <CollectionSaveButtonContainer collectionId={this.props.collectionId}/>
+          {/* <CollectionSaveButtonContainer collectionId={this.props.collectionId}/> */}
         </Link>
       </div>
     )
