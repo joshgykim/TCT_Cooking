@@ -10,7 +10,7 @@ class Api::CommentsController < ApplicationController
 
   def update
     @comment = Comment.find_by(id: params[:id])
-    debugger
+
     if @comment && @comment.update(comment_params)
       render :info
     end
