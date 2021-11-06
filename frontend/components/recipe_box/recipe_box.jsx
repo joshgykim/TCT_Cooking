@@ -19,17 +19,19 @@ class RecipeBox extends React.Component {
 
   render() {
     return (
-      <div className="recipebox">
+      <div>
         <SavedCategoryIndex
           filterRecipes={(arr) => this.filterRecipes(arr)}
           categories={this.props.categories}
           recipeNum={Object.keys(this.props.recipes).length}
         />
-        <div className="category-index-filler"/>
-        <SavedRecipeIndex 
-          recipes={this.props.recipes}
-          filter={this.state.filter}
-        />
+        <div className="recipebox">
+          <div className="category-index-filler"/>
+          <SavedRecipeIndex 
+            recipes={this.props.recipes}
+            filter={this.state.filter}
+          />
+        </div>
       </div>
     )
   }

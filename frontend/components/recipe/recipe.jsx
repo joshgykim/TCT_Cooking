@@ -296,7 +296,7 @@ class Recipe extends React.Component {
           <div className="recipe-comments-display">
             <NewCommentFormContainer recipeId={this.props.match.params.recipeId}/>
             <hr className="comment-break"/>
-            <CommentsIndex comments={this.props.comments}/>
+            <CommentsIndex recipeId={this.props.recipe.id} comments={this.props.comments}/>
           </div>
         </div>
         <SaveButtonContainer recipeId={this.props.recipe.id} isRecipePage={true}/>

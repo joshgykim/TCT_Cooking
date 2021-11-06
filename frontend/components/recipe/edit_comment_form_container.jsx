@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
   comment: {
     id: ownProps.comment.id,
     body: ownProps.comment.body,
-    recipe_id: 3,
+    recipe_id: ownProps.recipeId,
     author_id: ownProps.comment.commentorId
   },
   toggleEditMode: ownProps.toggleEditMode,

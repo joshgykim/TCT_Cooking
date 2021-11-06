@@ -1,11 +1,13 @@
 .recipebox {
   display: flex;
-  background: rgb(242,243,239)
+  background: rgb(242,243,239);
+  min-height: calc(100vh - 63px - 400px);
+
 }
 
 .recipebox-thumbnail-section { 
-  width: 950px;
   margin: 0px auto;
+  height:min-content;
   font-family: 'Hind Siliguri', sans-serif;
 }
 
@@ -26,6 +28,7 @@
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 5px;
+  margin-bottom: 50px;
 }
 
 .recipebox-category-index {
@@ -39,7 +42,6 @@
 
 .category-index-filler {
   width: 227px;
-  height: 100vh;
 }
 
 .recipebox-saved-recipe {

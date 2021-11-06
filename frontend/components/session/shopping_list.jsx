@@ -16,7 +16,7 @@ class ShoppingList extends React.Component {
   }
 
   deleteIngredient(recipeId, ingredientId) {
-    this.props.removeIngredient({recipeId: recipeId, ingredientId: ingredientId})
+    this.props.removeIngredient({recipeId: parseInt(recipeId), ingredientId: parseInt(ingredientId)})
   }
 
   render() {

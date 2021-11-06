@@ -10,7 +10,7 @@ class CommentsIndex extends React.Component {
     return (
       <div className="recipe-comment-list">
         {Object.keys(this.props.comments).map( (comment, i) => (
-          <CommentItemContainer key={i} comment={this.props.comments[comment]}/>
+          <CommentItemContainer key={i} comment={this.props.comments[comment]} recipeId={this.props.recipeId}/>
         ))}
       </div>
     )

@@ -23,6 +23,6 @@ export const patchShopping = data => (
   $.ajax({
     url: `/api/shoppings/${data.recipeId}`,
     method: "patch",
-    data: { data }
+    data
   })
 )

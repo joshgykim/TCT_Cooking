@@ -36,4 +36,10 @@ export const removeShopping = recipeId => dispatch => destroyShopping(recipeId)
   .then( payload => dispatch(deleteShopping(payload)))
 
 export const removeIngredient = data => dispatch => patchShopping(data)
-  .then( payload => dispatch(receiveShopping(payload)))
+  .then( payload => {
+    if (payload.id) {
+      return dispatch(deleteShopping(payload))
+    } else {
+      return dispatch(receiveShopping(payload))
+    }
+  })

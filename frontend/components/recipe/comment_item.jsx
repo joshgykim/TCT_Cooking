@@ -51,6 +51,7 @@ class CommentItem extends React.Component {
           comment={this.props.comment}
           editMode={this.state}
           toggleEditMode={(e) => this.toggleEditMode(e)}
+          recipeId={this.props.recipeId}
         />
         <hr className="comment-break"/>
       </div>
