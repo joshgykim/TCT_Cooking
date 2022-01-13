@@ -28,6 +28,7 @@ const commentsReducer = (state = {}, action) => {
       return {};
     default:
       return state;
+      
   }
 }
 
